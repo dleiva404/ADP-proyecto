@@ -17,6 +17,21 @@ namespace SmartProcessAI.Controllers
         {
             return View();
         }
+        
+        public IActionResult CargarDatos()
+        {
+            return View();
+        }
+
+        public IActionResult Hallazgos()
+        {
+            return View();
+        }
+
+        public IActionResult Historial()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

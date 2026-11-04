@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Hallazgos y Recomendaciones";
+    ViewData["HeaderTitle"] = "Revisión de Hallazgos (IA)";
+}
+
+<div class="card border-0 shadow-sm mb-4 finding-card">
+    <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+        <div>
+            <span class="badge bg-warning text-dark me-2">Riesgo Moderado</span>
+            <span class="fw-bold text-secondary">Proceso: Registro de Compras | DIDELCO</span>
+        </div>
+        <small class="text-muted"><i class="bi bi-clock me-1"></i>Detectado hoy, 10:45 AM</small>
+    </div>
+    <div class="card-body p-4">
+        <div class="row">
+            <div class="col-md-6 border-end">
+                <h6 class="fw-bold text-danger"><i class="bi bi-exclamation-octagon me-2"></i>Condición Encontrada</h6>
+                <p class="text-muted mb-3">Se detectó la clasificación errónea de una compra de equipo informático registrada como "Gasto" en lugar de "Activo Fijo", incumpliendo el requerimiento legal y tributario.</p>
+                <h6 class="fw-bold text-dark"><i class="bi bi-file-earmark-pdf me-2"></i>Evidencia Analizada</h6>
+                <a href="#" class="text-decoration-none small"><i class="bi bi-paperclip me-1"></i>Factura_Equipos_DIDELCO.pdf</a>
+            </div>
+            <div class="col-md-6 ps-4">
+                <h6 class="fw-bold text-primary mb-3"><i class="bi bi-robot me-2"></i>Recomendación de SmartProcess AI</h6>
+                <div class="ai-recommendation p-3 mb-3">
+                    <p class="mb-0 text-dark">Reclasificar el asiento contable del equipo informático hacia la cuenta de <strong>Activo Fijo</strong>. Se sugiere actualizar el manual de registro de compras de DIDELCO.</p>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="button" class="btn btn-outline-danger me-2"><i class="bi bi-x-circle me-1"></i>Descartar</button>
+                    <button type="button" class="btn btn-outline-secondary me-2"><i class="bi bi-pencil me-1"></i>Editar</button>
+                    <button type="button" class="btn btn-success"><i class="bi bi-check2-all me-1"></i>Aprobar y Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

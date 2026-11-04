@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Registrar Tarea";
+    ViewData["HeaderTitle"] = "Registro de Tarea y Carga de Datos";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header text-white py-3" style="background-color: #153D63;">
+        <h6 class="m-0 fw-bold"><i class="bi bi-clipboard-plus me-2"></i>Registrar Nueva Tarea de Auditoría</h6>
+    </div>
+    <div class="card-body p-4">
+        <form asp-controller="Home" asp-action="CargarDatos" method="post">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Empresa Asociada</label>
+                    <select class="form-select" name="EmpresaId" required>
+                        <option value="" selected disabled>Seleccione la empresa...</option>
+                        <option value="1">DIDELCO S.A de C.V</option>
+                        <option value="2">COPRO S.A. de C.V.</option>
+                        <option value="3">ELF S.A de C.V</option>
+                        <option value="4">Invercalma S.A. de C.V.</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Proceso Operativo</label>
+                    <select class="form-select" name="ProcesoId" required>
+                        <option value="" selected disabled>Seleccione el proceso...</option>
+                        <option value="1">Compras e Inventarios</option>
+                        <option value="2">Validación de Planillas</option>
+                        <option value="3">Facturación y Cuentas por Cobrar</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-8">
+                    <label class="form-label fw-semibold">Nombre / Descripción de la Tarea</label>
+                    <input type="text" class="form-control" name="DescripcionTarea" placeholder="Ej. Verificación de clasificación contable en facturas de equipo" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Nivel de Riesgo Preliminar</label>
+                    <select class="form-select" name="NivelRiesgo">
+                        <option value="Bajo">Bajo</option>
+                        <option value="Medio" selected>Medio</option>
+                        <option value="Alto">Alto</option>
+                        <option value="Crítico">Crítico</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Evidencia / Lote de Tareas (CSV, Excel, PDF)</label>
+                <div class="drop-zone">
+                    <i class="bi bi-cloud-arrow-up" style="font-size: 2.2rem; color: #153D63;"></i>
+                    <p class="mt-2 mb-1 fw-bold">Arrastra y suelta el archivo de tarea aquí</p>
+                    <p class="text-muted small">Soporta archivos .csv para análisis automático con ML.NET</p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="reset" class="btn btn-outline-secondary me-2">Limpiar</button>
+                <button type="submit" class="btn btn-ia"><i class="bi bi-cpu me-2"></i>Registrar y Analizar con IA</button>
+            </div>
+        </form>
+    </div>
+</div>
