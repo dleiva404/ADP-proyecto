@@ -1,4 +1,6 @@
-﻿@{
+﻿@model SmartProcessAI.ViewModels.HistorialViewModel
+@using SmartProcessAI.ViewModels
+@{
     ViewData["Title"] = "Historial y seguimiento";
     ViewData["Activo"] = "historial";
 }
@@ -12,30 +14,29 @@
 </div>
 
 <div class="tarjeta">
-    <div class="linea-tiempo">
-        <div class="evento">
-            <span class="evento-punto" style="--punto:#2F7D5B"></span>
-            <div class="evento-cuerpo">
-                <b>Conciliación manual de facturas</b>
-                <span>Aprobó recomendación · Auditor interno</span>
-            </div>
-            <div class="evento-fecha">14/10/2026</div>
+    @if (Model.Decisiones.Count == 0)
+    {
+        <p class="mb-0">Todavía no se ha decidido ningún hallazgo.</p>
+    }
+    else
+    {
+        <div class="linea-tiempo">
+            @foreach (var d in Model.Decisiones)
+            {
+                bool aprobada = d.EstadoRevision == "Aprobada";
+                <div class="evento">
+                    <span class="evento-punto" style="--punto:@(aprobada ? "#2F7D5B" : "#C0392B")"></span>
+                    <div class="evento-cuerpo">
+                        <b>@Formato.Corto(d.Hallazgo?.Descripcion)</b>
+                        <span>@(aprobada ? "Aprobó" : "Descartó") recomendación · @d.RevisadoPor?.Nombre (@d.RevisadoPor?.Rol?.Nombre)</span>
+                        @if (!string.IsNullOrWhiteSpace(d.Comentario))
+                        {
+                            <span>Comentario: @d.Comentario</span>
+                        }
+                    </div>
+                    <div class="evento-fecha">@d.FechaRevision?.ToString("dd/MM/yyyy")</div>
+                </div>
+            }
         </div>
-        <div class="evento">
-            <span class="evento-punto" style="--punto:#C0392B"></span>
-            <div class="evento-cuerpo">
-                <b>Captura repetida de pedidos</b>
-                <span>Descartó recomendación · Jefatura</span>
-            </div>
-            <div class="evento-fecha">12/10/2026</div>
-        </div>
-        <div class="evento">
-            <span class="evento-punto" style="--punto:#2F7D5B"></span>
-            <div class="evento-cuerpo">
-                <b>Reporte mensual de inventario</b>
-                <span>Aprobó recomendación · Gerencia</span>
-            </div>
-            <div class="evento-fecha">05/10/2026</div>
-        </div>
-    </div>
+    }
 </div>
