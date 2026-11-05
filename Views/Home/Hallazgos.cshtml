@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Revisión de hallazgos";
+    ViewData["Activo"] = "hallazgos";
+}
+
+<div class="cabecera">
+    <div>
+        <h1>Revisión de hallazgos</h1>
+        <p>Revisa las recomendaciones de la IA y decide qué hacer con cada una</p>
+    </div>
+</div>
+
+<div class="revision">
+    <div class="tarjeta lista-hallazgos">
+            <div class="hallazgo-fila activa">
+                <div>
+                    <b>Conciliación manual de facturas</b>
+                    <small>Cuentas por pagar</small>
+                    <span class="estado estado-pendiente">Pendiente</span>
+                </div>
+                <span class="tag tag-alto">Alto</span>
+            </div>
+            <div class="hallazgo-fila">
+                <div>
+                    <b>Captura repetida de pedidos</b>
+                    <small>Ventas</small>
+                    <span class="estado estado-revision">En revisión</span>
+                </div>
+                <span class="tag tag-medio">Medio</span>
+            </div>
+            <div class="hallazgo-fila">
+                <div>
+                    <b>Aprobación de gastos sin respaldo</b>
+                    <small>Tesorería</small>
+                    <span class="estado estado-pendiente">Pendiente</span>
+                </div>
+                <span class="tag tag-critico">Crítico</span>
+            </div>
+            <div class="hallazgo-fila">
+                <div>
+                    <b>Reporte mensual de inventario</b>
+                    <small>Bodega</small>
+                    <span class="estado estado-aprobado">Aprobado</span>
+                </div>
+                <span class="tag tag-bajo">Bajo</span>
+            </div>
+    </div>
+
+    <div class="tarjeta">
+        <h3 class="detalle-titulo">Conciliación manual de facturas</h3>
+        <span class="tag tag-alto">Alto</span>
+        <div class="detalle-proceso" style="margin-top:12px">Proceso: Cuentas por pagar</div>
+
+        <div class="etiqueta"><span class="etiqueta-ia">IA</span>Recomendación</div>
+        <p class="detalle-reco">Automatizar la conciliación con una regla de cruce entre factura y orden de compra.</p>
+
+        <div class="formulario">
+            <label>Comentario</label>
+            <textarea class="form-control" placeholder="Obligatorio si se descarta"></textarea>
+        </div>
+
+        <div class="detalle-botones">
+            <a class="boton boton-verde" asp-controller="Home" asp-action="Historial">Aprobar</a>
+            <a class="boton boton-borde-rojo" asp-controller="Home" asp-action="Historial">Descartar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Registrar tarea";
+    ViewData["Activo"] = "tarea";
+}
+
+<div class="cabecera">
+    <div>
+        <h1>Registrar tarea</h1>
+        <p>Datos que usa el análisis para detectar riesgos</p>
+    </div>
+</div>
+
+<form class="formulario">
+    <div class="tarjeta">
+        <div class="seccion-titulo"><span class="seccion-num">1</span>Datos generales</div>
+        <div class="fila fila-2">
+            <div>
+                <label>Puesto</label>
+                <input class="form-control" type="text" placeholder="Ej. Auxiliar contable" />
+            </div>
+            <div>
+                <label>Proceso</label>
+                <select class="form-control">
+                    <option>Cuentas por pagar</option>
+                    <option>Ventas</option>
+                    <option>Tesorería</option>
+                    <option>Bodega</option>
+                </select>
+            </div>
+        </div>
+        <label>Descripción de la tarea</label>
+        <textarea class="form-control" placeholder="Describe qué se hace en esta tarea"></textarea>
+    </div>
+
+    <div class="tarjeta">
+        <div class="seccion-titulo"><span class="seccion-num">2</span>Medidas de la tarea</div>
+        <div class="fila fila-3">
+            <div>
+                <label>Tiempo por ejecución (min)</label>
+                <input class="form-control" type="number" min="0" />
+            </div>
+            <div>
+                <label>Frecuencia mensual</label>
+                <input class="form-control" type="number" min="0" />
+            </div>
+            <div>
+                <label>Número de pasos</label>
+                <input class="form-control" type="number" min="0" />
+            </div>
+        </div>
+        <div class="fila fila-2">
+            <div>
+                <label>Herramientas</label>
+                <input class="form-control" type="text" placeholder="Ej. Excel, ERP" />
+            </div>
+            <div>
+                <label>¿La tarea es manual?</label>
+                <div class="opciones">
+                    <label class="opcion"><input type="radio" name="manual" checked />Sí</label>
+                    <label class="opcion"><input type="radio" name="manual" />No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formulario-botones">
+        <a class="boton boton-borde-rojo" asp-controller="Home" asp-action="Index">Cancelar</a>
+        <a class="boton boton-rojo" asp-controller="Home" asp-action="Hallazgos">Guardar y analizar</a>
+    </div>
+</form>

@@ -1,8 +1,81 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Panel de auditoría";
+    ViewData["Activo"] = "panel";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="cabecera">
+    <div>
+        <h1>Panel de auditoría</h1>
+        <p>Resumen del estado de la auditoría en Inversiones Calma</p>
+    </div>
+    <a class="boton boton-rojo" asp-controller="Home" asp-action="CargarDatos">Registrar tarea</a>
+</div>
+
+<div class="metricas">
+    <div class="tarjeta"><div class="etiqueta">Auditorías</div><div class="metrica-num">12</div></div>
+    <div class="tarjeta tarjeta-oscura"><div class="etiqueta">Hallazgos abiertos</div><div class="metrica-num num-dorado">7</div></div>
+    <div class="tarjeta"><div class="etiqueta">Críticos</div><div class="metrica-num num-rojo">1</div></div>
+    <div class="tarjeta"><div class="etiqueta">Por revisar</div><div class="metrica-num">5</div></div>
+</div>
+
+<div class="tarjeta">
+    <h2>Hallazgos por nivel de riesgo</h2>
+    <div class="riesgos">
+        <div>
+            <div class="riesgo-barra tag-bajo"></div>
+            <div class="riesgo-dato tag-bajo-p">Bajo<b>1</b></div>
+        </div>
+        <div>
+            <div class="riesgo-barra tag-medio"></div>
+            <div class="riesgo-dato tag-medio-p">Medio<b>1</b></div>
+        </div>
+        <div>
+            <div class="riesgo-barra tag-alto"></div>
+            <div class="riesgo-dato tag-alto-p">Alto<b>1</b></div>
+        </div>
+        <div>
+            <div class="riesgo-barra tag-critico"></div>
+            <div class="riesgo-dato tag-critico-p">Crítico<b>1</b></div>
+        </div>
+    </div>
+</div>
+
+<div class="tarjeta">
+    <div class="titulo-con-enlace">
+        <h2>Hallazgos recientes</h2>
+        <a class="enlace-rojo" asp-controller="Home" asp-action="Historial">Ver todos →</a>
+    </div>
+    <table class="tabla">
+        <thead><tr><th>Hallazgo</th><th>Proceso</th><th>Riesgo</th><th>Estado</th><th></th></tr></thead>
+        <tbody>
+                <tr>
+                    <td class="fuerte">Conciliación manual de facturas</td>
+                    <td>Cuentas por pagar</td>
+                    <td><span class="tag tag-alto">Alto</span></td>
+                    <td><span class="estado estado-pendiente">Pendiente</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+                <tr>
+                    <td class="fuerte">Captura repetida de pedidos</td>
+                    <td>Ventas</td>
+                    <td><span class="tag tag-medio">Medio</span></td>
+                    <td><span class="estado estado-revision">En revisión</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+                <tr>
+                    <td class="fuerte">Aprobación de gastos sin respaldo</td>
+                    <td>Tesorería</td>
+                    <td><span class="tag tag-critico">Crítico</span></td>
+                    <td><span class="estado estado-pendiente">Pendiente</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+                <tr>
+                    <td class="fuerte">Reporte mensual de inventario</td>
+                    <td>Bodega</td>
+                    <td><span class="tag tag-bajo">Bajo</span></td>
+                    <td><span class="estado estado-aprobado">Aprobado</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+        </tbody>
+    </table>
 </div>

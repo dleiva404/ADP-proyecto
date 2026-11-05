@@ -13,7 +13,26 @@ namespace SmartProcessAI.Controllers
             _logger = logger;
         }
 
+        [Route("panel")]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Route("tareas/registrar")]
+        public IActionResult CargarDatos()
+        {
+            return View();
+        }
+
+        [Route("hallazgos")]
+        public IActionResult Hallazgos()
+        {
+            return View();
+        }
+
+        [Route("historial")]
+        public IActionResult Historial()
         {
             return View();
         }
