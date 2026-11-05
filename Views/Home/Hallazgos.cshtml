@@ -1,6 +1,11 @@
-﻿@{
+﻿@model SmartProcessAI.ViewModels.HallazgosViewModel
+@using SmartProcessAI.ViewModels
+@{
     ViewData["Title"] = "Revisión de hallazgos";
     ViewData["Activo"] = "hallazgos";
+    var s = Model.Seleccionado;
+    var reco = s?.Recomendaciones.FirstOrDefault();
+    bool puedeDecidir = User.IsInRole("Jefatura");
 }
 
 <div class="cabecera">
@@ -10,58 +15,70 @@
     </div>
 </div>
 
-<div class="revision">
-    <div class="tarjeta lista-hallazgos">
-            <div class="hallazgo-fila activa">
-                <div>
-                    <b>Conciliación manual de facturas</b>
-                    <small>Cuentas por pagar</small>
-                    <span class="estado estado-pendiente">Pendiente</span>
-                </div>
-                <span class="tag tag-alto">Alto</span>
-            </div>
-            <div class="hallazgo-fila">
-                <div>
-                    <b>Captura repetida de pedidos</b>
-                    <small>Ventas</small>
-                    <span class="estado estado-revision">En revisión</span>
-                </div>
-                <span class="tag tag-medio">Medio</span>
-            </div>
-            <div class="hallazgo-fila">
-                <div>
-                    <b>Aprobación de gastos sin respaldo</b>
-                    <small>Tesorería</small>
-                    <span class="estado estado-pendiente">Pendiente</span>
-                </div>
-                <span class="tag tag-critico">Crítico</span>
-            </div>
-            <div class="hallazgo-fila">
-                <div>
-                    <b>Reporte mensual de inventario</b>
-                    <small>Bodega</small>
-                    <span class="estado estado-aprobado">Aprobado</span>
-                </div>
-                <span class="tag tag-bajo">Bajo</span>
-            </div>
-    </div>
+@if (TempData["Error"] is string error)
+{
+    <div class="alert alert-danger">@error</div>
+}
+@if (TempData["Aviso"] is string aviso)
+{
+    <div class="alert alert-info">@aviso</div>
+}
 
-    <div class="tarjeta">
-        <h3 class="detalle-titulo">Conciliación manual de facturas</h3>
-        <span class="tag tag-alto">Alto</span>
-        <div class="detalle-proceso" style="margin-top:12px">Proceso: Cuentas por pagar</div>
-
-        <div class="etiqueta"><span class="etiqueta-ia">IA</span>Recomendación</div>
-        <p class="detalle-reco">Automatizar la conciliación con una regla de cruce entre factura y orden de compra.</p>
-
-        <div class="formulario">
-            <label>Comentario</label>
-            <textarea class="form-control" placeholder="Obligatorio si se descarta"></textarea>
+@if (s == null)
+{
+    <div class="tarjeta">Aún no hay hallazgos. Registra una tarea para que la IA la analice.</div>
+}
+else
+{
+    <div class="revision">
+        <div class="tarjeta lista-hallazgos">
+            @foreach (var h in Model.Lista)
+            {
+                <a class="hallazgo-fila@(h.Id == s.Id ? " activa" : "")" asp-controller="Home" asp-action="Hallazgos" asp-route-id="@h.Id">
+                    <div>
+                        <b>@Formato.Corto(h.Descripcion, 45)</b>
+                        <small>@h.Tarea?.Proceso?.Nombre</small>
+                        <span class="estado estado-@Formato.ClaseEstado(h.Estado)">@h.Estado</span>
+                    </div>
+                    <span class="tag tag-@Formato.ClaseRiesgo(h.Riesgo)">@Formato.TextoRiesgo(h.Riesgo)</span>
+                </a>
+            }
         </div>
 
-        <div class="detalle-botones">
-            <a class="boton boton-verde" asp-controller="Home" asp-action="Historial">Aprobar</a>
-            <a class="boton boton-borde-rojo" asp-controller="Home" asp-action="Historial">Descartar</a>
+        <div class="tarjeta">
+            <h3 class="detalle-titulo">@Formato.Corto(s.Descripcion, 80)</h3>
+            <span class="tag tag-@Formato.ClaseRiesgo(s.Riesgo)">@Formato.TextoRiesgo(s.Riesgo)</span>
+            <div class="detalle-proceso" style="margin-top:12px">Proceso: @s.Tarea?.Proceso?.Nombre</div>
+
+            <div class="etiqueta"><span class="etiqueta-ia">IA</span>Recomendación</div>
+            @if (reco != null)
+            {
+                <p class="detalle-reco">@reco.Descripcion</p>
+                <p class="detalle-proceso">Tiempo ahorrado estimado: @reco.TiempoAhorradoMin min al mes</p>
+            }
+
+            @if (s.Estado == "Pendiente" && puedeDecidir)
+            {
+                <form method="post" asp-controller="Home" asp-action="Decidir">
+                    <input type="hidden" name="id" value="@s.Id" />
+                    <div class="formulario">
+                        <label>Comentario</label>
+                        <textarea class="form-control" name="comentario" placeholder="Obligatorio si se descarta"></textarea>
+                    </div>
+                    <div class="detalle-botones">
+                        <button type="submit" name="decision" value="aprobar" class="boton boton-verde">Aprobar</button>
+                        <button type="submit" name="decision" value="descartar" class="boton boton-borde-rojo">Descartar</button>
+                    </div>
+                </form>
+            }
+            else if (s.Estado != "Pendiente")
+            {
+                <div class="detalle-proceso">Estado: <b>@s.Estado</b>@(string.IsNullOrWhiteSpace(reco?.Comentario) ? "" : " · " + reco!.Comentario)</div>
+            }
+            else
+            {
+                <div class="detalle-proceso">Tu rol no puede aprobar ni descartar hallazgos.</div>
+            }
         </div>
     </div>
-</div>
+}

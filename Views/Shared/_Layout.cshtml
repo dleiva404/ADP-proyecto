@@ -17,18 +17,21 @@
             <div class="sidebar-logo">SmartProcess <span>AI</span></div>
             <nav class="sidebar-menu">
                 <a asp-controller="Home" asp-action="Index" class="@(ViewData["Activo"] as string == "panel" ? "activo" : "")"><svg class="icono" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="7" height="7" rx="2"/><rect x="12" y="1" width="7" height="7" rx="2"/><rect x="1" y="12" width="7" height="7" rx="2"/><rect x="12" y="12" width="7" height="7" rx="2"/></svg><span>Panel</span></a>
-                <a asp-controller="Home" asp-action="CargarDatos" class="@(ViewData["Activo"] as string == "tarea" ? "activo" : "")"><svg class="icono" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.5"/><path d="M10 6V14M6 10H14"/></svg><span>Registrar tarea</span></a>
+                @if (User.IsInRole("Auditor"))
+                {
+                    <a asp-controller="Home" asp-action="CargarDatos" class="@(ViewData["Activo"] as string == "tarea" ? "activo" : "")"><svg class="icono" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.5"/><path d="M10 6V14M6 10H14"/></svg><span>Registrar tarea</span></a>
+                }
                 <a href="#"><svg class="icono" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="16" height="18" rx="3"/><path d="M6 7H14M6 11H14M6 15H11"/></svg><span>Registro de auditoría</span></a>
                 <a asp-controller="Home" asp-action="Hallazgos" class="@(ViewData["Activo"] as string == "hallazgos" ? "activo" : "")"><svg class="icono" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2L18 17H2Z"/><path d="M10 8V12"/></svg><span>Ver Hallazgos</span></a>
                 <a asp-controller="Home" asp-action="Historial" class="@(ViewData["Activo"] as string == "historial" ? "activo" : "")"><svg class="icono" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.5"/><path d="M10 6V10L13 12"/></svg><span>Historial</span></a>
             </nav>
             <div class="usuario">
-                <div class="usuario-avatar">CC</div>
+                <div class="usuario-avatar">@SmartProcessAI.ViewModels.Formato.Iniciales(User.Identity?.Name)</div>
                 <div class="usuario-datos">
-                    <b>Carlos Calderon</b>
-                    <span>Auditor Interno</span>
+                    <b>@SmartProcessAI.ViewModels.Formato.NombreCorto(User.Identity?.Name)</b>
+                    <span>@User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value</span>
                 </div>
-                <a class="usuario-salir" asp-controller="Login" asp-action="Index" title="Cerrar sesión">
+                <a class="usuario-salir" asp-controller="Login" asp-action="Salir" title="Cerrar sesión">
                     <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H4.5A1.5 1.5 0 0 0 3 4.5v11A1.5 1.5 0 0 0 4.5 17H8"/><path d="M13 6l4 4-4 4M17 10H8"/></svg>
                 </a>
             </div>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model SmartProcessAI.ViewModels.TareaFormViewModel
+@{
     ViewData["Title"] = "Registrar tarea";
     ViewData["Activo"] = "tarea";
 }
@@ -10,26 +11,39 @@
     </div>
 </div>
 
-<form class="formulario">
+@if (Model.Errores.Count > 0)
+{
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach (var e in Model.Errores)
+            {
+                <li>@e</li>
+            }
+        </ul>
+    </div>
+}
+
+<form class="formulario" method="post" asp-controller="Home" asp-action="CargarDatos">
     <div class="tarjeta">
         <div class="seccion-titulo"><span class="seccion-num">1</span>Datos generales</div>
         <div class="fila fila-2">
             <div>
                 <label>Puesto</label>
-                <input class="form-control" type="text" placeholder="Ej. Auxiliar contable" />
+                <input class="form-control" type="text" name="Puesto" maxlength="100" value="@Model.Puesto" placeholder="Ej. Auxiliar contable" />
             </div>
             <div>
                 <label>Proceso</label>
-                <select class="form-control">
-                    <option>Cuentas por pagar</option>
-                    <option>Ventas</option>
-                    <option>Tesorería</option>
-                    <option>Bodega</option>
+                <select class="form-control" name="ProcesoId">
+                    <option value="0">Selecciona un proceso</option>
+                    @foreach (var p in Model.Procesos)
+                    {
+                        <option value="@p.Id" selected="@(p.Id == Model.ProcesoId)">@p.Nombre</option>
+                    }
                 </select>
             </div>
         </div>
         <label>Descripción de la tarea</label>
-        <textarea class="form-control" placeholder="Describe qué se hace en esta tarea"></textarea>
+        <textarea class="form-control" name="Descripcion" placeholder="Describe qué se hace en esta tarea">@Model.Descripcion</textarea>
     </div>
 
     <div class="tarjeta">
@@ -37,27 +51,27 @@
         <div class="fila fila-3">
             <div>
                 <label>Tiempo por ejecución (min)</label>
-                <input class="form-control" type="number" min="0" />
+                <input class="form-control" type="number" min="1" name="TiempoMinutos" value="@(Model.TiempoMinutos == 0 ? "" : Model.TiempoMinutos.ToString())" />
             </div>
             <div>
                 <label>Frecuencia mensual</label>
-                <input class="form-control" type="number" min="0" />
+                <input class="form-control" type="number" min="1" name="FrecuenciaMensual" value="@(Model.FrecuenciaMensual == 0 ? "" : Model.FrecuenciaMensual.ToString())" />
             </div>
             <div>
                 <label>Número de pasos</label>
-                <input class="form-control" type="number" min="0" />
+                <input class="form-control" type="number" min="1" name="NumeroPasos" value="@(Model.NumeroPasos == 0 ? "" : Model.NumeroPasos.ToString())" />
             </div>
         </div>
         <div class="fila fila-2">
             <div>
                 <label>Herramientas</label>
-                <input class="form-control" type="text" placeholder="Ej. Excel, ERP" />
+                <input class="form-control" type="text" name="Herramientas" maxlength="255" value="@Model.Herramientas" placeholder="Ej. Excel, ERP (separadas por coma)" />
             </div>
             <div>
                 <label>¿La tarea es manual?</label>
                 <div class="opciones">
-                    <label class="opcion"><input type="radio" name="manual" checked />Sí</label>
-                    <label class="opcion"><input type="radio" name="manual" />No</label>
+                    <label class="opcion"><input type="radio" name="EsManual" value="true" checked="@Model.EsManual" />Sí</label>
+                    <label class="opcion"><input type="radio" name="EsManual" value="false" checked="@(!Model.EsManual)" />No</label>
                 </div>
             </div>
         </div>
@@ -65,6 +79,6 @@
 
     <div class="formulario-botones">
         <a class="boton boton-borde-rojo" asp-controller="Home" asp-action="Index">Cancelar</a>
-        <a class="boton boton-rojo" asp-controller="Home" asp-action="Hallazgos">Guardar y analizar</a>
+        <button type="submit" class="boton boton-rojo">Guardar y analizar</button>
     </div>
 </form>
