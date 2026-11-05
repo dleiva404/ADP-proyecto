@@ -1,65 +1,70 @@
-@{
-    ViewData["Title"] = "Registrar Tarea";
-    ViewData["HeaderTitle"] = "Registro de Tarea y Carga de Datos";
+﻿@{
+    ViewData["Title"] = "Registrar tarea";
+    ViewData["Activo"] = "tarea";
 }
 
-<div class="card shadow-sm">
-    <div class="card-header text-white py-3" style="background-color: #153D63;">
-        <h6 class="m-0 fw-bold"><i class="bi bi-clipboard-plus me-2"></i>Registrar Nueva Tarea de Auditoría</h6>
-    </div>
-    <div class="card-body p-4">
-        <form asp-controller="Home" asp-action="CargarDatos" method="post">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label class="form-label fw-semibold">Empresa Asociada</label>
-                    <select class="form-select" name="EmpresaId" required>
-                        <option value="" selected disabled>Seleccione la empresa...</option>
-                        <option value="1">DIDELCO S.A de C.V</option>
-                        <option value="2">COPRO S.A. de C.V.</option>
-                        <option value="3">ELF S.A de C.V</option>
-                        <option value="4">Invercalma S.A. de C.V.</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label fw-semibold">Proceso Operativo</label>
-                    <select class="form-select" name="ProcesoId" required>
-                        <option value="" selected disabled>Seleccione el proceso...</option>
-                        <option value="1">Compras e Inventarios</option>
-                        <option value="2">Validación de Planillas</option>
-                        <option value="3">Facturación y Cuentas por Cobrar</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-8">
-                    <label class="form-label fw-semibold">Nombre / Descripción de la Tarea</label>
-                    <input type="text" class="form-control" name="DescripcionTarea" placeholder="Ej. Verificación de clasificación contable en facturas de equipo" required>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label fw-semibold">Nivel de Riesgo Preliminar</label>
-                    <select class="form-select" name="NivelRiesgo">
-                        <option value="Bajo">Bajo</option>
-                        <option value="Medio" selected>Medio</option>
-                        <option value="Alto">Alto</option>
-                        <option value="Crítico">Crítico</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <label class="form-label fw-semibold">Evidencia / Lote de Tareas (CSV, Excel, PDF)</label>
-                <div class="drop-zone">
-                    <i class="bi bi-cloud-arrow-up" style="font-size: 2.2rem; color: #153D63;"></i>
-                    <p class="mt-2 mb-1 fw-bold">Arrastra y suelta el archivo de tarea aquí</p>
-                    <p class="text-muted small">Soporta archivos .csv para análisis automático con ML.NET</p>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-end">
-                <button type="reset" class="btn btn-outline-secondary me-2">Limpiar</button>
-                <button type="submit" class="btn btn-ia"><i class="bi bi-cpu me-2"></i>Registrar y Analizar con IA</button>
-            </div>
-        </form>
+<div class="cabecera">
+    <div>
+        <h1>Registrar tarea</h1>
+        <p>Datos que usa el análisis para detectar riesgos</p>
     </div>
 </div>
+
+<form class="formulario">
+    <div class="tarjeta">
+        <div class="seccion-titulo"><span class="seccion-num">1</span>Datos generales</div>
+        <div class="fila fila-2">
+            <div>
+                <label>Puesto</label>
+                <input class="form-control" type="text" placeholder="Ej. Auxiliar contable" />
+            </div>
+            <div>
+                <label>Proceso</label>
+                <select class="form-control">
+                    <option>Cuentas por pagar</option>
+                    <option>Ventas</option>
+                    <option>Tesorería</option>
+                    <option>Bodega</option>
+                </select>
+            </div>
+        </div>
+        <label>Descripción de la tarea</label>
+        <textarea class="form-control" placeholder="Describe qué se hace en esta tarea"></textarea>
+    </div>
+
+    <div class="tarjeta">
+        <div class="seccion-titulo"><span class="seccion-num">2</span>Medidas de la tarea</div>
+        <div class="fila fila-3">
+            <div>
+                <label>Tiempo por ejecución (min)</label>
+                <input class="form-control" type="number" min="0" />
+            </div>
+            <div>
+                <label>Frecuencia mensual</label>
+                <input class="form-control" type="number" min="0" />
+            </div>
+            <div>
+                <label>Número de pasos</label>
+                <input class="form-control" type="number" min="0" />
+            </div>
+        </div>
+        <div class="fila fila-2">
+            <div>
+                <label>Herramientas</label>
+                <input class="form-control" type="text" placeholder="Ej. Excel, ERP" />
+            </div>
+            <div>
+                <label>¿La tarea es manual?</label>
+                <div class="opciones">
+                    <label class="opcion"><input type="radio" name="manual" checked />Sí</label>
+                    <label class="opcion"><input type="radio" name="manual" />No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="formulario-botones">
+        <a class="boton boton-borde-rojo" asp-controller="Home" asp-action="Index">Cancelar</a>
+        <a class="boton boton-rojo" asp-controller="Home" asp-action="Hallazgos">Guardar y analizar</a>
+    </div>
+</form>

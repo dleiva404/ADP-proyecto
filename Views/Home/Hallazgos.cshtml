@@ -1,35 +1,67 @@
-@{
-    ViewData["Title"] = "Hallazgos y Recomendaciones";
-    ViewData["HeaderTitle"] = "Revisión de Hallazgos (IA)";
+﻿@{
+    ViewData["Title"] = "Revisión de hallazgos";
+    ViewData["Activo"] = "hallazgos";
 }
 
-<div class="card border-0 shadow-sm mb-4 finding-card">
-    <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
-        <div>
-            <span class="badge bg-warning text-dark me-2">Riesgo Moderado</span>
-            <span class="fw-bold text-secondary">Proceso: Registro de Compras | DIDELCO</span>
-        </div>
-        <small class="text-muted"><i class="bi bi-clock me-1"></i>Detectado hoy, 10:45 AM</small>
+<div class="cabecera">
+    <div>
+        <h1>Revisión de hallazgos</h1>
+        <p>Revisa las recomendaciones de la IA y decide qué hacer con cada una</p>
     </div>
-    <div class="card-body p-4">
-        <div class="row">
-            <div class="col-md-6 border-end">
-                <h6 class="fw-bold text-danger"><i class="bi bi-exclamation-octagon me-2"></i>Condición Encontrada</h6>
-                <p class="text-muted mb-3">Se detectó la clasificación errónea de una compra de equipo informático registrada como "Gasto" en lugar de "Activo Fijo", incumpliendo el requerimiento legal y tributario.</p>
-                <h6 class="fw-bold text-dark"><i class="bi bi-file-earmark-pdf me-2"></i>Evidencia Analizada</h6>
-                <a href="#" class="text-decoration-none small"><i class="bi bi-paperclip me-1"></i>Factura_Equipos_DIDELCO.pdf</a>
-            </div>
-            <div class="col-md-6 ps-4">
-                <h6 class="fw-bold text-primary mb-3"><i class="bi bi-robot me-2"></i>Recomendación de SmartProcess AI</h6>
-                <div class="ai-recommendation p-3 mb-3">
-                    <p class="mb-0 text-dark">Reclasificar el asiento contable del equipo informático hacia la cuenta de <strong>Activo Fijo</strong>. Se sugiere actualizar el manual de registro de compras de DIDELCO.</p>
+</div>
+
+<div class="revision">
+    <div class="tarjeta lista-hallazgos">
+            <div class="hallazgo-fila activa">
+                <div>
+                    <b>Conciliación manual de facturas</b>
+                    <small>Cuentas por pagar</small>
+                    <span class="estado estado-pendiente">Pendiente</span>
                 </div>
-                <div class="d-flex justify-content-end mt-4">
-                    <button type="button" class="btn btn-outline-danger me-2"><i class="bi bi-x-circle me-1"></i>Descartar</button>
-                    <button type="button" class="btn btn-outline-secondary me-2"><i class="bi bi-pencil me-1"></i>Editar</button>
-                    <button type="button" class="btn btn-success"><i class="bi bi-check2-all me-1"></i>Aprobar y Guardar</button>
-                </div>
+                <span class="tag tag-alto">Alto</span>
             </div>
+            <div class="hallazgo-fila">
+                <div>
+                    <b>Captura repetida de pedidos</b>
+                    <small>Ventas</small>
+                    <span class="estado estado-revision">En revisión</span>
+                </div>
+                <span class="tag tag-medio">Medio</span>
+            </div>
+            <div class="hallazgo-fila">
+                <div>
+                    <b>Aprobación de gastos sin respaldo</b>
+                    <small>Tesorería</small>
+                    <span class="estado estado-pendiente">Pendiente</span>
+                </div>
+                <span class="tag tag-critico">Crítico</span>
+            </div>
+            <div class="hallazgo-fila">
+                <div>
+                    <b>Reporte mensual de inventario</b>
+                    <small>Bodega</small>
+                    <span class="estado estado-aprobado">Aprobado</span>
+                </div>
+                <span class="tag tag-bajo">Bajo</span>
+            </div>
+    </div>
+
+    <div class="tarjeta">
+        <h3 class="detalle-titulo">Conciliación manual de facturas</h3>
+        <span class="tag tag-alto">Alto</span>
+        <div class="detalle-proceso" style="margin-top:12px">Proceso: Cuentas por pagar</div>
+
+        <div class="etiqueta"><span class="etiqueta-ia">IA</span>Recomendación</div>
+        <p class="detalle-reco">Automatizar la conciliación con una regla de cruce entre factura y orden de compra.</p>
+
+        <div class="formulario">
+            <label>Comentario</label>
+            <textarea class="form-control" placeholder="Obligatorio si se descarta"></textarea>
+        </div>
+
+        <div class="detalle-botones">
+            <a class="boton boton-verde" asp-controller="Home" asp-action="Historial">Aprobar</a>
+            <a class="boton boton-borde-rojo" asp-controller="Home" asp-action="Historial">Descartar</a>
         </div>
     </div>
 </div>

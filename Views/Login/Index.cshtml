@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Iniciar sesión";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="login">
+    <section class="login-izq">
+        <div class="login-marca">SmartProcess<span>AI</span></div>
+        <img class="login-hud" src="~/img/Logo.svg" alt="" />
+        <div class="login-empresa">Inversiones Calma</div>
+    </section>
+
+    <section class="login-der">
+        <div class="login-card">
+            <h1>Iniciar sesión</h1>
+            <p class="login-sub">Accede con tu cuenta institucional</p>
+
+            <form method="get" asp-controller="Home" asp-action="Index">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" class="form-control" placeholder="nombre@inversionescalma.com" />
+
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" class="form-control" placeholder="••••••••" />
+
+                <a href="#" class="login-olvido">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="btn-principal">Iniciar sesión</button>
+            </form>
+        </div>
+    </section>
+</div>

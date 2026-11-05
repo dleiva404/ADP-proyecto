@@ -1,93 +1,81 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard";
-    ViewData["HeaderTitle"] = "Panel de Auditoría";
+    ViewData["Title"] = "Panel de auditoría";
+    ViewData["Activo"] = "panel";
 }
 
-<!-- Tarjetas de Métricas -->
-<div class="row mb-4">
-    <div class="col-md-4">
-        <div class="card card-metric p-3">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h6 class="text-muted mb-1">Procesos Analizados</h6>
-                    <h3 class="m-0 fw-bold">124</h3>
-                </div>
-                <div class="bg-primary bg-opacity-10 p-3 rounded">
-                    <i class="bi bi-check2-circle text-primary fs-4"></i>
-                </div>
-            </div>
-        </div>
+<div class="cabecera">
+    <div>
+        <h1>Panel de auditoría</h1>
+        <p>Resumen del estado de la auditoría en Inversiones Calma</p>
     </div>
-    <div class="col-md-4">
-        <div class="card card-metric card-metric-warning p-3">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h6 class="text-muted mb-1">Alertas Generadas (IA)</h6>
-                    <h3 class="m-0 fw-bold">18</h3>
-                </div>
-                <div class="bg-warning bg-opacity-10 p-3 rounded">
-                    <i class="bi bi-exclamation-triangle text-warning fs-4"></i>
-                </div>
-            </div>
+    <a class="boton boton-rojo" asp-controller="Home" asp-action="CargarDatos">Registrar tarea</a>
+</div>
+
+<div class="metricas">
+    <div class="tarjeta"><div class="etiqueta">Auditorías</div><div class="metrica-num">12</div></div>
+    <div class="tarjeta tarjeta-oscura"><div class="etiqueta">Hallazgos abiertos</div><div class="metrica-num num-dorado">7</div></div>
+    <div class="tarjeta"><div class="etiqueta">Críticos</div><div class="metrica-num num-rojo">1</div></div>
+    <div class="tarjeta"><div class="etiqueta">Por revisar</div><div class="metrica-num">5</div></div>
+</div>
+
+<div class="tarjeta">
+    <h2>Hallazgos por nivel de riesgo</h2>
+    <div class="riesgos">
+        <div>
+            <div class="riesgo-barra tag-bajo"></div>
+            <div class="riesgo-dato tag-bajo-p">Bajo<b>1</b></div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card card-metric card-metric-danger p-3">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h6 class="text-muted mb-1">Riesgos Críticos</h6>
-                    <h3 class="m-0 fw-bold">3</h3>
-                </div>
-                <div class="bg-danger bg-opacity-10 p-3 rounded">
-                    <i class="bi bi-shield-fill-x text-danger fs-4"></i>
-                </div>
-            </div>
+        <div>
+            <div class="riesgo-barra tag-medio"></div>
+            <div class="riesgo-dato tag-medio-p">Medio<b>1</b></div>
+        </div>
+        <div>
+            <div class="riesgo-barra tag-alto"></div>
+            <div class="riesgo-dato tag-alto-p">Alto<b>1</b></div>
+        </div>
+        <div>
+            <div class="riesgo-barra tag-critico"></div>
+            <div class="riesgo-dato tag-critico-p">Crítico<b>1</b></div>
         </div>
     </div>
 </div>
 
-<!-- Tabla de Últimos Hallazgos -->
-<div class="card border-0 shadow-sm rounded-3">
-    <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
-        <h6 class="m-0 fw-bold text-dark">Últimos Hallazgos Detectados</h6>
-        <a asp-controller="Home" asp-action="Hallazgos" class="btn btn-sm btn-outline-primary">Ver todos</a>
+<div class="tarjeta">
+    <div class="titulo-con-enlace">
+        <h2>Hallazgos recientes</h2>
+        <a class="enlace-rojo" asp-controller="Home" asp-action="Historial">Ver todos →</a>
     </div>
-    <div class="card-body p-0">
-        <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
-                    <tr>
-                        <th class="px-4 py-3">Empresa</th>
-                        <th class="py-3">Proceso</th>
-                        <th class="py-3">Tipo de Riesgo</th>
-                        <th class="py-3">Estado</th>
-                        <th class="py-3">Acción IA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="px-4 py-3 fw-semibold">DIDELCO</td>
-                        <td>Registro de Compras (Inventario)</td>
-                        <td><span class="badge bg-warning text-dark">Clasificación Errónea</span></td>
-                        <td><span class="badge bg-light text-secondary border">Pendiente Revisión</span></td>
-                        <td><a asp-controller="Home" asp-action="Hallazgos" class="btn btn-sm btn-primary">Recomendación Lista</a></td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-3 fw-semibold">COPRO</td>
-                        <td>Validación de Planillas</td>
-                        <td><span class="badge bg-danger">Falta Documentación</span></td>
-                        <td><span class="badge bg-light text-secondary border">Auditor Asignado</span></td>
-                        <td><a asp-controller="Home" asp-action="Hallazgos" class="btn btn-sm btn-primary">Recomendación Lista</a></td>
-                    </tr>
-                    <tr>
-                        <td class="px-4 py-3 fw-semibold">Invercalma</td>
-                        <td>Facturación CCF</td>
-                        <td><span class="badge bg-info">Optimización de Tiempo</span></td>
-                        <td><span class="badge bg-success">Aprobado</span></td>
-                        <td><button class="btn btn-sm btn-outline-secondary" disabled>Aplicada</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <table class="tabla">
+        <thead><tr><th>Hallazgo</th><th>Proceso</th><th>Riesgo</th><th>Estado</th><th></th></tr></thead>
+        <tbody>
+                <tr>
+                    <td class="fuerte">Conciliación manual de facturas</td>
+                    <td>Cuentas por pagar</td>
+                    <td><span class="tag tag-alto">Alto</span></td>
+                    <td><span class="estado estado-pendiente">Pendiente</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+                <tr>
+                    <td class="fuerte">Captura repetida de pedidos</td>
+                    <td>Ventas</td>
+                    <td><span class="tag tag-medio">Medio</span></td>
+                    <td><span class="estado estado-revision">En revisión</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+                <tr>
+                    <td class="fuerte">Aprobación de gastos sin respaldo</td>
+                    <td>Tesorería</td>
+                    <td><span class="tag tag-critico">Crítico</span></td>
+                    <td><span class="estado estado-pendiente">Pendiente</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+                <tr>
+                    <td class="fuerte">Reporte mensual de inventario</td>
+                    <td>Bodega</td>
+                    <td><span class="tag tag-bajo">Bajo</span></td>
+                    <td><span class="estado estado-aprobado">Aprobado</span></td>
+                    <td class="derecha"><a class="enlace-rojo" asp-controller="Home" asp-action="Hallazgos">Revisar →</a></td>
+                </tr>
+        </tbody>
+    </table>
 </div>
