@@ -1,9 +1,13 @@
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<SmartProcessAI.Services.MotorReglasService>();
 builder.Services.AddSingleton<SmartProcessAI.Services.AnalisisMLService>();
+
+builder.Services.AddDbContext<SmartProcessAI.Datos.AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 var ml = app.Services.GetRequiredService<SmartProcessAI.Services.AnalisisMLService>();
