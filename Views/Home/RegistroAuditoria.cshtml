@@ -1,0 +1,63 @@
+@model SmartProcessAI.ViewModels.RegistroAuditoriaViewModel
+@{
+    ViewData["Title"] = "Registro de auditoría";
+    ViewData["Activo"] = "auditorias";
+}
+
+<div class="cabecera">
+    <div>
+        <h1>Registro de auditoría</h1>
+        <p>Auditorías realizadas por proceso y empresa</p>
+    </div>
+    @if (User.IsInRole("Auditor"))
+    {
+        <a class="boton boton-rojo" asp-controller="Home" asp-action="CargarDatos">Nueva auditoría</a>
+    }
+</div>
+
+@if (TempData["Aviso"] is string aviso)
+{
+    <div class="alert alert-info">@aviso</div>
+}
+@if (TempData["Error"] is string error)
+{
+    <div class="alert alert-danger">@error</div>
+}
+
+<div class="filtros">
+    <a class="filtro @(Model.Filtro == "todas" ? "activo" : "")" asp-action="RegistroAuditoria">Todas</a>
+    <a class="filtro @(Model.Filtro == "en-curso" ? "activo" : "")" asp-action="RegistroAuditoria" asp-route-filtro="en-curso">En curso</a>
+    <a class="filtro @(Model.Filtro == "cerradas" ? "activo" : "")" asp-action="RegistroAuditoria" asp-route-filtro="cerradas">Cerradas</a>
+</div>
+
+<div class="tarjeta">
+    <table class="tabla">
+        <thead><tr><th>Proceso</th><th>Empresa</th><th>Fecha</th><th>Estado</th><th></th></tr></thead>
+        <tbody>
+            @foreach (var a in Model.Auditorias)
+            {
+                bool cerrada = a.Estado == "Cerrada";
+                <tr>
+                    <td class="fuerte">@a.Proceso?.Nombre</td>
+                    <td>@a.Empresa?.Nombre</td>
+                    <td>@a.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td><span class="estado @(cerrada ? "estado-aprobado" : "estado-revision")">@(cerrada ? "Cerrada" : "En curso")</span></td>
+                    <td class="derecha">
+                        @if (!cerrada && User.IsInRole("Jefatura"))
+                        {
+                            <form asp-action="CerrarAuditoria" method="post" class="form-cerrar" onsubmit="return confirm('¿Cerrar esta auditoría?');">
+                                <input type="hidden" name="id" value="@a.Id" />
+                                <button type="submit" class="enlace-abrir enlace-cerrar">Cerrar</button>
+                            </form>
+                        }
+                        <a class="fuerte enlace-abrir" asp-action="Hallazgos" asp-route-auditoriaId="@a.Id">Abrir</a>
+                    </td>
+                </tr>
+            }
+            @if (Model.Auditorias.Count == 0)
+            {
+                <tr><td colspan="5">No hay auditorías para mostrar.</td></tr>
+            }
+        </tbody>
+    </table>
+</div>

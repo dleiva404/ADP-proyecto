@@ -35,6 +35,12 @@ public class HallazgosViewModel
     public Hallazgo? Seleccionado { get; set; }
 }
 
+public class RegistroAuditoriaViewModel
+{
+    public string Filtro { get; set; } = "todas";
+    public List<Auditoria> Auditorias { get; set; } = new();
+}
+
 public class HistorialViewModel
 {
     public List<Recomendacion> Decisiones { get; set; } = new();

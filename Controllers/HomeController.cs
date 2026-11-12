@@ -129,16 +129,46 @@ namespace SmartProcessAI.Controllers
         }
 
         [Route("hallazgos")]
-        public async Task<IActionResult> Hallazgos(int? id)
+        public async Task<IActionResult> Hallazgos(int? id, int? auditoriaId)
         {
-            var lista = await _db.Hallazgos
+            var consulta = _db.Hallazgos
                 .Include(h => h.Tarea).ThenInclude(t => t!.Proceso)
                 .Include(h => h.Recomendaciones)
-                .OrderByDescending(h => h.Fecha)
-                .ToListAsync();
+                .AsQueryable();
+
+            // viene desde "Registro de auditoría" -> solo los hallazgos de esa auditoría
+            if (auditoriaId.HasValue)
+                consulta = consulta.Where(h => h.AuditoriaId == auditoriaId.Value);
+
+            var lista = await consulta.OrderByDescending(h => h.Fecha).ToListAsync();
 
             var seleccionado = lista.FirstOrDefault(h => h.Id == id) ?? lista.FirstOrDefault();
             return View(new HallazgosViewModel { Lista = lista, Seleccionado = seleccionado });
+        }
+
+        // Registro de auditoría: listado de auditorías con proceso, empresa, fecha y estado
+        [Route("auditorias")]
+        public async Task<IActionResult> RegistroAuditoria(string? filtro)
+        {
+            var consulta = _db.Auditorias
+                .Include(a => a.Proceso)
+                .Include(a => a.Empresa)
+                .AsQueryable();
+
+            // en la base el estado abierto se guarda como "Abierta"; en pantalla se muestra "En curso"
+            if (filtro == "en-curso")
+                consulta = consulta.Where(a => a.Estado == "Abierta");
+            else if (filtro == "cerradas")
+                consulta = consulta.Where(a => a.Estado == "Cerrada");
+            else
+                filtro = "todas";
+
+            var vm = new RegistroAuditoriaViewModel
+            {
+                Filtro = filtro,
+                Auditorias = await consulta.OrderByDescending(a => a.Fecha).ThenByDescending(a => a.Id).ToListAsync()
+            };
+            return View(vm);
         }
 
         [HttpPost("hallazgos/decidir")]
@@ -170,6 +200,35 @@ namespace SmartProcessAI.Controllers
 
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Historial));
+        }
+
+        // Cierre de auditoría: solo Jefatura (quien ya decide sobre los hallazgos)
+        [HttpPost("auditorias/cerrar")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Jefatura")]
+        public async Task<IActionResult> CerrarAuditoria(int id)
+        {
+            var auditoria = await _db.Auditorias
+                .Include(a => a.Hallazgos)
+                .FirstOrDefaultAsync(a => a.Id == id);
+            if (auditoria == null)
+                return NotFound();
+
+            if (auditoria.Estado == "Cerrada")
+            {
+                TempData["Aviso"] = "La auditoría ya estaba cerrada.";
+            }
+            else if (auditoria.Hallazgos.Any(h => h.Estado == "Pendiente"))
+            {
+                TempData["Error"] = "No se puede cerrar: aún hay hallazgos pendientes de decisión.";
+            }
+            else
+            {
+                auditoria.Estado = "Cerrada";
+                await _db.SaveChangesAsync();
+                TempData["Aviso"] = "La auditoría se cerró correctamente.";
+            }
+            return RedirectToAction(nameof(RegistroAuditoria));
         }
 
         [Route("historial")]

@@ -646,3 +646,27 @@ body {
 a.hallazgo-fila { text-decoration: none; color: inherit; }
 button.boton { font-family: inherit; }
 .alert { border-radius: 10px; font-size: 14.5px; }
+
+/* registro de auditoria */
+.filtros { display: flex; gap: 12px; margin-bottom: 24px; }
+.filtro {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 22px;
+    border-radius: 19px;
+    border: 1px solid var(--borde);
+    background-color: var(--fondo-tarjeta);
+    color: var(--verde-sidebar);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .2s, color .2s;
+}
+.filtro:hover { background-color: #EFE7D3; color: var(--verde-sidebar); }
+.filtro.activo { background-color: var(--verde-sidebar); border-color: var(--verde-sidebar); color: var(--fondo-pagina); }
+.enlace-abrir { color: var(--verde-sidebar); text-decoration: none; font-size: 14.5px; }
+.enlace-abrir:hover { color: var(--boton-principal); text-decoration: underline; }
+.form-cerrar { display: inline; margin-right: 18px; }
+.enlace-cerrar { background: none; border: none; padding: 0; font-family: inherit; font-weight: 600; color: var(--boton-principal); cursor: pointer; }
+.enlace-cerrar:hover { color: #B9770E; text-decoration: underline; }
