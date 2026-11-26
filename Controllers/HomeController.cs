@@ -191,7 +191,7 @@ namespace SmartProcessAI.Controllers
 
             foreach (var r in hallazgo.Recomendaciones)
             {
-                r.EstadoRevision = descartar ? EstadosHallazgo.RechazadoPorJefe : EstadosHallazgo.Aprobado;
+                r.EstadoRevision = descartar ? "Descartada" : "Aprobada";
                 r.FechaRevision = DateTime.Now;
                 r.Comentario = comentario?.Trim() ?? string.Empty;
                 r.RevisadoPorUsuarioId = UsuarioActualId();

@@ -56,13 +56,14 @@ namespace SmartProcessAI.Datos
                 .HasOne(v => v.CreadaPor).WithMany()
                 .HasForeignKey(v => v.CreadaPorUsuarioId);
 
-            modelBuilder.Entity<VersionDocumento>()
-                .HasOne(v => v.CreadaPor).WithMany()
-                .HasForeignKey(v => v.CreadaPorUsuarioId);
+            modelBuilder.Entity<Correccion>()
+                .HasOne(c => c.CreadaPor).WithMany()
+                .HasForeignKey(c => c.CreadaPorUsuarioId);
 
             modelBuilder.Entity<Correccion>()
                 .HasOne(c => c.AprobadaPor).WithMany()
                 .HasForeignKey(c => c.AprobadaPorUsuarioId);
+
 
         }
     }
