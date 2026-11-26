@@ -13,6 +13,8 @@ public class Usuario
     public int EmpresaId { get; set; }
     public Empresa? Empresa { get; set; }
 
+    public bool Activo { get; set; } = true;
+
     public ICollection<Auditoria> Auditorias { get; set; } = new List<Auditoria>();
     public ICollection<Hallazgo> Hallazgos { get; set; } = new List<Hallazgo>();
     public ICollection<Evidencia> Evidencias { get; set; } = new List<Evidencia>();

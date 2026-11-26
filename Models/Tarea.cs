@@ -3,6 +3,8 @@ namespace SmartProcessAI.Models;
 public class Tarea
 {
     public int Id { get; set; }
+    public int ProcesoId { get; set; }
+    public int? AreaId { get; set; }
     public string Puesto { get; set; } = string.Empty;
     public string Descripcion { get; set; } = string.Empty;
     public int TiempoMinutos { get; set; }
@@ -11,8 +13,9 @@ public class Tarea
     public string Herramientas { get; set; } = string.Empty;
     public bool EsManual { get; set; }
 
-    public int ProcesoId { get; set; }
+    
     public Proceso? Proceso { get; set; }
+    public Area? Area { get; set; }
 
     public ICollection<Hallazgo> Hallazgos { get; set; } = new List<Hallazgo>();
     public ICollection<Evidencia> Evidencias { get; set; } = new List<Evidencia>();

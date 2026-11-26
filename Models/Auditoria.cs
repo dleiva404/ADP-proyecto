@@ -3,7 +3,7 @@ namespace SmartProcessAI.Models;
 public class Auditoria
 {
     public int Id { get; set; }
-    public string Estado { get; set; } = "Abierta";
+    public string Estado { get; set; } = EstadosAuditoria.Abierta;
     public DateTime Fecha { get; set; } = DateTime.Now;
 
     public int EmpresaId { get; set; }

@@ -1,5 +1,7 @@
 ﻿namespace SmartProcessAI.ViewModels;
 
+using SmartProcessAI.Models;
+
 // funciones chicas para mostrar datos en las vistas
 public static class Formato
 {
@@ -30,7 +32,7 @@ public static class Formato
         return estado switch
         {
             "Aprobado" => "aprobado",
-            "Descartado" => "descartado",
+            EstadosHallazgo.RechazadoPorJefe or EstadosHallazgo.RechazadoPorGerente => "descartado",
             _ => "pendiente"
         };
     }

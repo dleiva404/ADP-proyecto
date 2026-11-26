@@ -6,7 +6,7 @@ public class Hallazgo
     public string Descripcion { get; set; } = string.Empty;
     public string Riesgo { get; set; } = string.Empty;
     public DateTime Fecha { get; set; } = DateTime.Now;
-    public string Estado { get; set; } = "Pendiente";
+    public string Estado { get; set; } = EstadosHallazgo.Pendiente;
 
     public int AuditoriaId { get; set; }
     public Auditoria? Auditoria { get; set; }
@@ -20,6 +20,11 @@ public class Hallazgo
     public int UsuarioId { get; set; }
     public Usuario? Usuario { get; set; }
 
+    public int? AreaId { get; set; }
+    public Area? Area { get; set; }
+
     public ICollection<Recomendacion> Recomendaciones { get; set; } = new List<Recomendacion>();
     public ICollection<Evidencia> Evidencias { get; set; } = new List<Evidencia>();
+    public ICollection<Decision> Decisiones { get; set; } = new List<Decision>();
+    public ICollection<Correccion> Correcciones { get; set; } = new List<Correccion>();
 }
