@@ -173,7 +173,7 @@ namespace SmartProcessAI.Controllers
 
         [HttpPost("hallazgos/decidir")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefatura")]
+        [Authorize(Roles = RolesSistema.Jefe)]
         public async Task<IActionResult> Decidir(int id, string decision, string? comentario)
         {
             var hallazgo = await _db.Hallazgos
@@ -191,12 +191,12 @@ namespace SmartProcessAI.Controllers
 
             foreach (var r in hallazgo.Recomendaciones)
             {
-                r.EstadoRevision = descartar ? "Descartada" : "Aprobada";
+                r.EstadoRevision = descartar ? EstadosHallazgo.RechazadoPorJefe : EstadosHallazgo.Aprobado;
                 r.FechaRevision = DateTime.Now;
                 r.Comentario = comentario?.Trim() ?? string.Empty;
                 r.RevisadoPorUsuarioId = UsuarioActualId();
             }
-            hallazgo.Estado = descartar ? "Descartado" : "Aprobado";
+            hallazgo.Estado = descartar ? EstadosHallazgo.RechazadoPorJefe : EstadosHallazgo.Aprobado;
 
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Historial));
@@ -205,7 +205,7 @@ namespace SmartProcessAI.Controllers
         // Cierre de auditoría: solo Jefatura (quien ya decide sobre los hallazgos)
         [HttpPost("auditorias/cerrar")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Jefatura")]
+        [Authorize(Roles = RolesSistema.Jefe)]
         public async Task<IActionResult> CerrarAuditoria(int id)
         {
             var auditoria = await _db.Auditorias

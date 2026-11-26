@@ -19,6 +19,11 @@ namespace SmartProcessAI.Datos
         public DbSet<Hallazgo> Hallazgos { get; set; }
         public DbSet<Recomendacion> Recomendaciones { get; set; }
         public DbSet<Evidencia> Evidencias { get; set; }
+        public DbSet<Area> Areas { get; set; }
+        public DbSet<Decision> Decisiones { get; set; }
+        public DbSet<Documento> Documentos { get; set; }
+        public DbSet<VersionDocumento> VersionesDocumento { get; set; }
+        public DbSet<Correccion> Correcciones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,11 +37,33 @@ namespace SmartProcessAI.Datos
             modelBuilder.Entity<Hallazgo>().ToTable("Hallazgo");
             modelBuilder.Entity<Recomendacion>().ToTable("Recomendacion");
             modelBuilder.Entity<Evidencia>().ToTable("Evidencia");
+            modelBuilder.Entity<Area>().ToTable("Area");
+            modelBuilder.Entity<Decision>().ToTable("Decision");
+            modelBuilder.Entity<Documento>().ToTable("Documento");
+            modelBuilder.Entity<VersionDocumento>().ToTable("VersionDocumento");
+            modelBuilder.Entity<Correccion>().ToTable("Correccion");
 
             modelBuilder.Entity<Recomendacion>()
                 .HasOne(r => r.RevisadoPor)
                 .WithMany(u => u.RecomendacionesRevisadas)
                 .HasForeignKey(r => r.RevisadoPorUsuarioId);
+
+            modelBuilder.Entity<Documento>()
+                .HasOne(d => d.SubidoPor).WithMany()
+                .HasForeignKey(d => d.SubidoPorUsuarioId);
+
+            modelBuilder.Entity<VersionDocumento>()
+                .HasOne(v => v.CreadaPor).WithMany()
+                .HasForeignKey(v => v.CreadaPorUsuarioId);
+
+            modelBuilder.Entity<VersionDocumento>()
+                .HasOne(v => v.CreadaPor).WithMany()
+                .HasForeignKey(v => v.CreadaPorUsuarioId);
+
+            modelBuilder.Entity<Correccion>()
+                .HasOne(c => c.AprobadaPor).WithMany()
+                .HasForeignKey(c => c.AprobadaPorUsuarioId);
+
         }
     }
 }

@@ -43,7 +43,7 @@
                     <td>@a.Fecha.ToString("dd/MM/yyyy")</td>
                     <td><span class="estado @(cerrada ? "estado-aprobado" : "estado-revision")">@(cerrada ? "Cerrada" : "En curso")</span></td>
                     <td class="derecha">
-                        @if (!cerrada && User.IsInRole("Jefatura"))
+                        @if (!cerrada && User.IsInRole(SmartProcessAI.Models.RolesSistema.Jefe))
                         {
                             <form asp-action="CerrarAuditoria" method="post" class="form-cerrar" onsubmit="return confirm('¿Cerrar esta auditoría?');">
                                 <input type="hidden" name="id" value="@a.Id" />

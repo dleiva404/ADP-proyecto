@@ -5,7 +5,7 @@
     ViewData["Activo"] = "hallazgos";
     var s = Model.Seleccionado;
     var reco = s?.Recomendaciones.FirstOrDefault();
-    bool puedeDecidir = User.IsInRole("Jefatura");
+    bool puedeDecidir = User.IsInRole(SmartProcessAI.Models.RolesSistema.Jefe);
 }
 
 <div class="cabecera">
