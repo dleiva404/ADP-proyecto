@@ -37,6 +37,24 @@ public class PuntajeAnomalia
     public float Score { get; set; }
 }
 
+public class TareaAreaInput
+{
+    [LoadColumn(0)] public string Area { get; set; } = "";
+    [LoadColumn(1)] public string Descripcion { get; set; } = "";
+    [LoadColumn(2)] public float TiempoMinutos { get; set; }
+    [LoadColumn(3)] public float FrecuenciaMensual { get; set; }
+    [LoadColumn(4)] public float NumeroPasos { get; set; }
+    [LoadColumn(5)] public float CantidadHerramientas { get; set; }
+    [LoadColumn(6)] public string TipoProblema { get; set; } = "";
+    [LoadColumn(7)] public bool EsAutomatizable { get; set; }
+}
+
+public class PrediccionTipo
+{
+    [ColumnName("PredictedLabel")] public string TipoProblema { get; set; } = "";
+    public float[] Score { get; set; } = Array.Empty<float>();
+}
+
 // único servicio que usa ML.NET
 public class AnalisisMLService
 {
@@ -46,9 +64,12 @@ public class AnalisisMLService
     private ITransformer? _modeloAutomatizable;
     private ITransformer? _modeloAtipicos;
     private float _umbralAtipico;
+    private ITransformer? _modeloTipo;
+    private Dictionary<(string Area, string Tipo), double> _promedioTiempo = new();
 
     // métricas del último entrenamiento (para la demo)
     public string ResumenEntrenamiento { get; private set; } = "Sin entrenar";
+    public string ResumenTipoProblema { get; private set; } = "Sin entrenar";
 
     public void EntrenarModelos(string rutaDataset)
     {
@@ -141,6 +162,65 @@ public class AnalisisMLService
             });
         }
         return resultado;
+    }
+
+    public void EntrenarModeloTipoProblema(string rutaDataset)
+    {
+        IDataView datos = _ml.Data.LoadFromTextFile<TareaAreaInput>(
+            rutaDataset, separatorChar: ',', hasHeader: true);
+
+        _promedioTiempo = _ml.Data
+            .CreateEnumerable<TareaAreaInput>(datos, reuseRowObject: false)
+            .GroupBy(f => (f.Area, f.TipoProblema))
+            .ToDictionary(g => g.Key, g => g.Average(f => (double)f.TiempoMinutos));
+
+        var particion = _ml.Data.TrainTestSplit(datos, testFraction: 0.2, seed: 1);
+
+        var pipeline = _ml.Transforms.Conversion
+            .MapValueToKey("Label", nameof(TareaAreaInput.TipoProblema))
+            .Append(_ml.Transforms.Text.FeaturizeText("TextoFeatures", nameof(TareaAreaInput.Descripcion)))
+            .Append(_ml.Transforms.Concatenate("NumFeatures",
+                nameof(TareaAreaInput.TiempoMinutos),
+                nameof(TareaAreaInput.FrecuenciaMensual),
+                nameof(TareaAreaInput.NumeroPasos),
+                nameof(TareaAreaInput.CantidadHerramientas)))
+            .Append(_ml.Transforms.NormalizeMinMax("NumFeatures"))
+            .Append(_ml.Transforms.Concatenate("Features", "TextoFeatures", "NumFeatures"))
+            .Append(_ml.MulticlassClassification.Trainers.SdcaMaximumEntropy("Label", "Features"))
+            .Append(_ml.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+
+        _modeloTipo = pipeline.Fit(particion.TrainSet);
+
+        var m = _ml.MulticlassClassification.Evaluate(
+            _modeloTipo.Transform(particion.TestSet), labelColumnName: "Label");
+
+        ResumenTipoProblema =
+            $"Exactitud: {m.MicroAccuracy:P1} | Exactitud media por clase: {m.MacroAccuracy:P1}";
+    }
+
+    public double? PromedioTiempo(string? area, string tipo)
+    {
+        if (area != null && _promedioTiempo.TryGetValue((area, tipo), out var promedio))
+            return promedio;
+        return null;
+    }
+
+    public (string Tipo, float Confianza) PredecirTipoProblema(Tarea tarea)
+    {
+        if (_modeloTipo is null)
+            throw new InvalidOperationException("Primero hay que entrenar el modelo de tipo de problema.");
+
+        var motor = _ml.Model.CreatePredictionEngine<TareaAreaInput, PrediccionTipo>(_modeloTipo);
+        var e = AEntrada(tarea);
+        var p = motor.Predict(new TareaAreaInput
+        {
+            Descripcion = tarea.Descripcion,
+            TiempoMinutos = e.TiempoMinutos,
+            FrecuenciaMensual = e.FrecuenciaMensual,
+            NumeroPasos = e.NumeroPasos,
+            CantidadHerramientas = e.CantidadHerramientas
+        });
+        return (p.TipoProblema, p.Score.Length > 0 ? p.Score.Max() : 0f);
     }
 
     private static TareaInput AEntrada(Tarea t)
