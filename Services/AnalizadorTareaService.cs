@@ -1,4 +1,5 @@
-﻿using SmartProcessAI.Models;
+﻿using SmartProcessAI.Datos;
+using SmartProcessAI.Models;
 
 namespace SmartProcessAI.Services;
 
@@ -6,10 +7,24 @@ namespace SmartProcessAI.Services;
 public class AnalizadorTareaService
 {
     private readonly AnalisisMLService _ml;
+    private readonly AppDbContext _db;
 
-    public AnalizadorTareaService(AnalisisMLService ml)
+    public AnalizadorTareaService(AnalisisMLService ml, AppDbContext db)
     {
         _ml = ml;
+        _db = db;
+    }
+
+    private string? NombreArea(Tarea tarea)
+    {
+        if (tarea.Area != null)
+            return tarea.Area.Nombre;
+        if (tarea.Proceso?.Area != null)
+            return tarea.Proceso.Area.Nombre;
+        return _db.Procesos
+            .Where(p => p.Id == tarea.ProcesoId)
+            .Select(p => p.Area!.Nombre)
+            .FirstOrDefault();
     }
 
     // devuelve el hallazgo con su recomendación, o null si la tarea no es manual
@@ -33,19 +48,35 @@ public class AnalizadorTareaService
         if (atipica && riesgo == "Bajo")
             riesgo = "Medio";
 
-        double porcentajeAhorro = prediccion.EsAutomatizable ? 0.8 : 0.3;
+        string? area = NombreArea(tarea);
+        var (tipo, confianza) = _ml.PredecirTipoProblema(tarea);
+        var plantilla = CatalogoRecomendaciones.Obtener(area, tipo);
+
+        double porcentajeAhorro = prediccion.EsAutomatizable
+            ? plantilla.PorcentajeAhorro
+            : Math.Min(plantilla.PorcentajeAhorro, 0.3);
         int ahorroMin = (int)(minutosMes * porcentajeAhorro);
 
-        string texto = prediccion.EsAutomatizable
-            ? $"Automatizar esta tarea manual. La IA estima {prediccion.Probabilidad:P0} de probabilidad de que sea automatizable."
-            : "Estandarizar y simplificar los pasos de esta tarea manual. La IA no la considera fácil de automatizar por completo.";
+        string texto = plantilla.Recomendacion;
+        texto += prediccion.EsAutomatizable
+            ? $" La IA estima {prediccion.Probabilidad:P0} de probabilidad de que sea automatizable."
+            : " La IA no la considera fácil de automatizar por completo, por lo que conviene estandarizar primero.";
+        texto += $" Tipo de problema detectado: {tipo} ({confianza:P0} de confianza).";
+
+        double? promedio = _ml.PromedioTiempo(area, tipo);
+        if (promedio is > 0)
+        {
+            double diferencia = (tarea.TiempoMinutos - promedio.Value) / promedio.Value;
+            string sentido = diferencia >= 0 ? "por encima" : "por debajo";
+            texto += $" Su tiempo ({tarea.TiempoMinutos} min) está {Math.Abs(diferencia):P0} {sentido} del promedio de tareas similares del área ({promedio.Value:F0} min).";
+        }
 
         if (atipica)
             texto += " Además, su tiempo de ejecución es atípico frente a tareas similares.";
 
         var hallazgo = new Hallazgo
         {
-            Descripcion = tarea.Descripcion,
+            Descripcion = tarea.Descripcion.TrimEnd('.', ' ') + ". " + plantilla.Hallazgo,
             Riesgo = riesgo,
             Fecha = DateTime.Now,
             Estado = "Pendiente",
