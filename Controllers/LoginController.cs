@@ -43,6 +43,12 @@ namespace SmartProcessAI.Controllers
 
                 if (resultado != PasswordVerificationResult.Failed)
                 {
+                    if (!usuario.Activo)
+                    {
+                        ViewData["Error"] = "Tu cuenta está desactivada. Contacta al Administrador de TI.";
+                        ViewData["Correo"] = correo;
+                        return View();
+                    }
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
