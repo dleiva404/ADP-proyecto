@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<SmartProcessAI.Services.MotorReglasService>();
 builder.Services.AddSingleton<SmartProcessAI.Services.AnalisisMLService>();
 builder.Services.AddScoped<SmartProcessAI.Services.AnalizadorTareaService>();
+builder.Services.AddScoped<SmartProcessAI.Services.UsuarioService>();
 
 builder.Services.AddDbContext<SmartProcessAI.Datos.AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
