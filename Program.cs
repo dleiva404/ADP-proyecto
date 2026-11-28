@@ -21,6 +21,7 @@ builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.C
 var app = builder.Build();
 var ml = app.Services.GetRequiredService<SmartProcessAI.Services.AnalisisMLService>();
 ml.EntrenarModelos(Path.Combine(app.Environment.ContentRootPath, "Datos", "tareas_ejemplo.csv"));
+ml.EntrenarModeloTipoProblema(Path.Combine(app.Environment.ContentRootPath, "Datos", "tareas_por_area.csv"));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

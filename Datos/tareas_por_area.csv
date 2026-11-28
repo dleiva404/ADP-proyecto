@@ -1,0 +1,401 @@
+Area,Descripcion,TiempoMinutos,FrecuenciaMensual,NumeroPasos,CantidadHerramientas,TipoProblema,EsAutomatizable
+Flota vehicular,Control de siniestros sin acta,82,8,9,1,Control sin evidencia,0
+Flota vehicular,Seguimiento de multas y reparaciones pendientes en Excel,19,53,3,4,Seguimiento manual,1
+Inventario,Verificación de documentos de ajuste sin respaldo en Excel,33,5,5,2,Control sin evidencia,0
+Efectivo,Digitación de recibos de caja,55,51,4,1,Captura manual,1
+Efectivo,Autorización verbal de salidas de efectivo en Excel,106,14,7,1,Control sin evidencia,1
+Infraestructura,Reporte de estado de equipos e instalaciones en Excel,77,4,8,2,Reporte manual,1
+Prevencion de lavado de dinero y activos,Revisión de listas restrictivas sin registro de la consulta con apoyo del correo,120,18,5,3,Control sin evidencia,0
+Legal,Preparación manual del resumen de cumplimiento legal en papel y luego digitado,76,6,4,3,Reporte manual,1
+Inventario,Conciliación de inventario por ubicación en Excel,101,8,6,3,Conciliacion manual,1
+Efectivo,Comparación de depósitos contra el extracto del banco,264,10,12,1,Conciliacion manual,1
+Infraestructura,Comparación de facturas de mantenimiento contra órdenes de trabajo con apoyo del correo,95,12,9,3,Conciliacion manual,1
+Administrativa,Reporte mensual de gastos administrativos en Excel,165,8,6,3,Reporte manual,1
+Efectivo,Arqueo de caja sin firma ni respaldo del conteo en papel y luego digitado,38,28,8,4,Control sin evidencia,0
+Administrativa,Control de facturas por vencer,22,74,2,2,Seguimiento manual,1
+Administrativa,Seguimiento de solicitudes de compra en trámite en papel y luego digitado,46,19,3,2,Seguimiento manual,1
+Efectivo,Registro de depósitos y remesas del día en el ERP y luego en Excel,45,111,7,1,Captura manual,1
+Flota vehicular,Revisión de documentos de vehículos sin copia archivada con apoyo del correo,67,8,5,4,Control sin evidencia,0
+Cuentas por cobrar,Comparación del auxiliar de cuentas por cobrar contra el mayor,94,9,8,2,Conciliacion manual,1
+Inventario,Seguimiento de diferencias de inventario por resolver en papel y luego digitado,25,54,2,1,Seguimiento manual,1
+Administrativa,Conciliación de cuentas por pagar contra estados de proveedores en el ERP y luego en Excel,111,5,6,3,Conciliacion manual,1
+Infraestructura,Digitación de reportes de fallas de instalaciones con apoyo del correo,52,105,3,4,Captura manual,1
+Flota vehicular,Control de vencimiento de seguros y tarjetas de circulación,42,44,2,1,Seguimiento manual,1
+Administrativa,Conciliación de cuentas por pagar contra estados de proveedores con apoyo del correo,271,10,7,1,Conciliacion manual,1
+Flota vehicular,Armado del informe mensual de costos de flota de forma manual,238,4,6,2,Reporte manual,1
+Prevencion de lavado de dinero y activos,Preparación manual del resumen de alertas en papel y luego digitado,211,3,5,2,Reporte manual,1
+Inventario,Seguimiento de diferencias de inventario por resolver en Excel,23,75,2,2,Seguimiento manual,1
+Administrativa,Control de viáticos sin comprobantes completos,110,10,6,2,Control sin evidencia,0
+Infraestructura,Seguimiento de reparaciones pendientes con proveedores en papel y luego digitado,23,22,6,3,Seguimiento manual,0
+Infraestructura,Seguimiento de reparaciones pendientes con proveedores en Excel,57,76,3,2,Seguimiento manual,0
+Administrativa,Preparación manual del presupuesto contra ejecutado en el ERP y luego en Excel,232,5,8,1,Reporte manual,1
+Cuentas por cobrar,Comparación del auxiliar de cuentas por cobrar contra el mayor en papel y luego digitado,242,9,8,1,Conciliacion manual,0
+Efectivo,Digitación de recibos de caja con apoyo del correo,67,65,4,2,Captura manual,1
+Infraestructura,Revisión de mantenimientos sin acta de recepción en el ERP y luego en Excel,111,15,4,4,Control sin evidencia,0
+Efectivo,Control de remesas por confirmar con el banco,38,51,3,2,Seguimiento manual,1
+Administrativa,Aprobación de pagos sin respaldo documental en el ERP y luego en Excel,96,16,7,2,Control sin evidencia,0
+Efectivo,Seguimiento de cheques pendientes de cobro,35,22,2,1,Seguimiento manual,1
+Cuentas por cobrar,Comparación del auxiliar de cuentas por cobrar contra el mayor,239,6,12,4,Conciliacion manual,0
+Cuentas por cobrar,Reporte de antigüedad de saldos en papel y luego digitado,196,1,5,2,Reporte manual,1
+Inventario,Conciliación de inventario por ubicación,99,9,7,4,Conciliacion manual,1
+Flota vehicular,Armado del informe mensual de costos de flota,239,3,4,1,Reporte manual,1
+Flota vehicular,Comparación de gastos de mantenimiento contra órdenes de servicio,138,11,11,1,Conciliacion manual,0
+Legal,Registro de contratos y vigencias en papel y luego digitado,54,76,6,1,Captura manual,1
+Prevencion de lavado de dinero y activos,Digitación de formularios de conocimiento del cliente de forma manual,65,50,7,1,Captura manual,1
+Legal,Revisión de contratos sin firma completa en el ERP y luego en Excel,94,8,4,4,Control sin evidencia,0
+Flota vehicular,Preparación manual del resumen de kilometraje en papel y luego digitado,228,8,4,4,Reporte manual,1
+Flota vehicular,Control de vencimiento de seguros y tarjetas de circulación de forma manual,37,63,5,2,Seguimiento manual,1
+Efectivo,Revisión de cierres de caja sin evidencia archivada con apoyo del correo,67,17,5,1,Control sin evidencia,0
+Administrativa,Preparación manual del presupuesto contra ejecutado en el ERP y luego en Excel,100,5,8,2,Reporte manual,1
+Prevencion de lavado de dinero y activos,Armado del informe periódico para el oficial de cumplimiento en el ERP y luego en Excel,216,2,4,2,Reporte manual,1
+Flota vehicular,Conciliación de kilometraje contra consumo de combustible de forma manual,175,6,6,2,Conciliacion manual,1
+Legal,Armado del informe de litigios y trámites en Excel,106,3,7,2,Reporte manual,1
+Cuentas por cobrar,Comparación del auxiliar de cuentas por cobrar contra el mayor en el ERP y luego en Excel,274,2,10,2,Conciliacion manual,1
+Prevencion de lavado de dinero y activos,Preparación manual del resumen de alertas en Excel,192,5,4,3,Reporte manual,1
+Administrativa,Seguimiento de solicitudes de compra en trámite de forma manual,35,39,3,4,Seguimiento manual,1
+Flota vehicular,Registro de combustible por unidad en el ERP y luego en Excel,27,37,7,2,Captura manual,0
+Inventario,Registro de entradas y salidas de bodega con apoyo del correo,46,111,5,3,Captura manual,1
+Infraestructura,Verificación de extintores y salidas sin evidencia de forma manual,83,24,4,2,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Seguimiento de alertas por resolver con apoyo del correo,27,35,5,3,Seguimiento manual,0
+Cuentas por cobrar,Reporte de antigüedad de saldos con apoyo del correo,177,5,5,2,Reporte manual,1
+Infraestructura,Inspección de instalaciones sin registro fotográfico con apoyo del correo,44,7,5,4,Control sin evidencia,0
+Efectivo,Registro de depósitos y remesas del día con apoyo del correo,49,32,6,1,Captura manual,1
+Flota vehicular,Comparación de gastos de mantenimiento contra órdenes de servicio en papel y luego digitado,250,12,9,2,Conciliacion manual,0
+Administrativa,Captura de comprobantes de gasto en el sistema en el ERP y luego en Excel,86,44,3,1,Captura manual,1
+Prevencion de lavado de dinero y activos,Comparación de operaciones contra listas internas en el ERP y luego en Excel,160,12,12,4,Conciliacion manual,0
+Administrativa,Conciliación de cuentas por pagar contra estados de proveedores,170,3,11,2,Conciliacion manual,0
+Infraestructura,Reporte de estado de equipos e instalaciones con apoyo del correo,212,1,6,2,Reporte manual,0
+Cuentas por cobrar,Captura de notas de crédito en Excel de forma manual,47,94,5,2,Captura manual,1
+Efectivo,Conciliación bancaria mensual contra estados de cuenta en Excel,281,11,9,3,Conciliacion manual,0
+Administrativa,Seguimiento de solicitudes de compra en trámite con apoyo del correo,33,53,6,1,Seguimiento manual,1
+Flota vehicular,Control de siniestros sin acta en papel y luego digitado,97,5,4,1,Control sin evidencia,0
+Administrativa,Reporte mensual de gastos administrativos de forma manual,228,8,7,1,Reporte manual,1
+Efectivo,Elaboración del reporte diario de flujo de efectivo de forma manual,108,2,4,4,Reporte manual,1
+Inventario,Registro de entradas y salidas de bodega con apoyo del correo,51,105,3,2,Captura manual,1
+Cuentas por cobrar,Comparación del auxiliar de cuentas por cobrar contra el mayor en papel y luego digitado,127,12,7,4,Conciliacion manual,1
+Efectivo,Elaboración del reporte diario de flujo de efectivo en Excel,184,8,5,4,Reporte manual,1
+Efectivo,Preparación manual del resumen de ingresos y egresos,77,1,6,2,Reporte manual,1
+Flota vehicular,Registro de combustible por unidad en papel y luego digitado,61,50,5,3,Captura manual,1
+Legal,Seguimiento de requerimientos legales pendientes con apoyo del correo,23,19,4,2,Seguimiento manual,0
+Prevencion de lavado de dinero y activos,Revisión de listas restrictivas sin registro de la consulta,93,20,7,2,Control sin evidencia,0
+Inventario,Armado manual del informe de productos sin movimiento en el ERP y luego en Excel,220,4,6,4,Reporte manual,1
+Infraestructura,Control de mantenimientos preventivos programados en el ERP y luego en Excel,19,31,4,2,Seguimiento manual,1
+Flota vehicular,Control de vencimiento de seguros y tarjetas de circulación en el ERP y luego en Excel,26,55,2,1,Seguimiento manual,0
+Legal,Cotejo de documentos legales contra el expediente con apoyo del correo,173,3,6,3,Conciliacion manual,1
+Legal,Control de cumplimiento normativo sin evidencia en el ERP y luego en Excel,87,29,8,1,Control sin evidencia,0
+Cuentas por cobrar,Reporte de antigüedad de saldos de forma manual,107,3,7,1,Reporte manual,1
+Cuentas por cobrar,Armado del informe de cartera vencida con apoyo del correo,104,7,7,2,Reporte manual,1
+Inventario,Armado manual del informe de productos sin movimiento de forma manual,159,6,7,1,Reporte manual,1
+Legal,Control de renovaciones por vencer en papel y luego digitado,60,75,5,2,Seguimiento manual,1
+Efectivo,Cotejo de arqueos de caja contra el sistema en Excel,191,12,9,4,Conciliacion manual,1
+Inventario,Cotejo de existencias de bodega con el kárdex con apoyo del correo,201,11,10,3,Conciliacion manual,1
+Inventario,Verificación de documentos de ajuste sin respaldo en Excel,115,16,9,4,Control sin evidencia,0
+Legal,Seguimiento de requerimientos legales pendientes en Excel,18,76,4,3,Seguimiento manual,1
+Administrativa,Digitación de facturas de proveedores con apoyo del correo,63,55,7,3,Captura manual,1
+Cuentas por cobrar,Cotejo de facturas emitidas contra cobros aplicados en papel y luego digitado,270,4,10,1,Conciliacion manual,1
+Flota vehicular,Reporte de rendimiento de unidades en Excel,150,5,7,3,Reporte manual,1
+Administrativa,Seguimiento de solicitudes de compra en trámite de forma manual,43,76,4,2,Seguimiento manual,1
+Inventario,Cotejo de existencias de bodega con el kárdex en el ERP y luego en Excel,259,3,11,3,Conciliacion manual,0
+Prevencion de lavado de dinero y activos,Seguimiento de requerimientos de información pendientes en el ERP y luego en Excel,56,41,6,3,Seguimiento manual,1
+Flota vehicular,Captura de bitácoras de viaje en papel y luego digitado,88,68,4,4,Captura manual,1
+Efectivo,Captura de ingresos de caja en hoja de cálculo con apoyo del correo,47,117,5,2,Captura manual,1
+Cuentas por cobrar,Autorización de notas de crédito sin firma con apoyo del correo,67,5,6,2,Control sin evidencia,0
+Efectivo,Revisión de cierres de caja sin evidencia archivada con apoyo del correo,115,24,6,4,Control sin evidencia,0
+Inventario,Control de pedidos pendientes de recibir en el ERP y luego en Excel,40,40,2,4,Seguimiento manual,1
+Flota vehicular,Armado del informe mensual de costos de flota en papel y luego digitado,204,2,8,3,Reporte manual,0
+Cuentas por cobrar,Seguimiento de cheques devueltos,58,54,2,4,Seguimiento manual,1
+Inventario,Verificación de documentos de ajuste sin respaldo de forma manual,89,18,7,3,Control sin evidencia,0
+Efectivo,Comparación de depósitos contra el extracto del banco en papel y luego digitado,245,12,7,1,Conciliacion manual,0
+Flota vehicular,Preparación manual del resumen de kilometraje de forma manual,64,5,8,1,Reporte manual,0
+Prevencion de lavado de dinero y activos,Comparación de operaciones contra listas internas en papel y luego digitado,168,9,10,3,Conciliacion manual,0
+Inventario,Registro de entradas y salidas de bodega de forma manual,25,59,5,2,Captura manual,0
+Administrativa,Control de facturas por vencer en Excel,50,33,5,4,Seguimiento manual,1
+Infraestructura,Captura de órdenes de trabajo en hoja de cálculo con apoyo del correo,29,76,5,2,Captura manual,0
+Prevencion de lavado de dinero y activos,Digitación de formularios de conocimiento del cliente con apoyo del correo,65,120,3,1,Captura manual,1
+Infraestructura,Revisión de mantenimientos sin acta de recepción en Excel,42,25,6,3,Control sin evidencia,0
+Flota vehicular,Conciliación de kilometraje contra consumo de combustible con apoyo del correo,174,12,6,2,Conciliacion manual,0
+Infraestructura,Armado del informe mensual de mantenimientos en Excel,64,3,6,3,Reporte manual,1
+Inventario,Conciliación de inventario por ubicación en el ERP y luego en Excel,263,10,8,4,Conciliacion manual,0
+Prevencion de lavado de dinero y activos,Cotejo de transacciones contra el perfil del cliente,99,6,7,4,Conciliacion manual,1
+Inventario,Conteo físico de inventario contra el sistema con apoyo del correo,238,6,6,2,Conciliacion manual,1
+Flota vehicular,Captura de bitácoras de viaje de forma manual,89,37,5,1,Captura manual,1
+Efectivo,Seguimiento de faltantes y sobrantes de caja en papel y luego digitado,54,16,6,3,Seguimiento manual,1
+Administrativa,Registro manual de órdenes de compra de forma manual,23,83,5,3,Captura manual,1
+Cuentas por cobrar,Armado del informe de cartera vencida con apoyo del correo,126,6,5,1,Reporte manual,1
+Legal,Armado del informe de litigios y trámites con apoyo del correo,164,6,8,4,Reporte manual,1
+Flota vehicular,Conciliación de kilometraje contra consumo de combustible en Excel,271,4,12,3,Conciliacion manual,1
+Infraestructura,Seguimiento de reparaciones pendientes con proveedores de forma manual,20,25,2,1,Seguimiento manual,1
+Prevencion de lavado de dinero y activos,Cotejo de transacciones contra el perfil del cliente en papel y luego digitado,159,3,12,3,Conciliacion manual,1
+Inventario,Control de pedidos pendientes de recibir con apoyo del correo,39,50,5,3,Seguimiento manual,1
+Cuentas por cobrar,Captura de notas de crédito en Excel en el ERP y luego en Excel,58,80,3,4,Captura manual,1
+Flota vehicular,Registro de combustible por unidad de forma manual,51,114,3,1,Captura manual,1
+Cuentas por cobrar,Control de límites de crédito sin evidencia en papel y luego digitado,70,19,6,4,Control sin evidencia,0
+Administrativa,Preparación manual del presupuesto contra ejecutado en Excel,172,8,4,3,Reporte manual,1
+Prevencion de lavado de dinero y activos,Captura de datos de clientes para el expediente,47,39,7,3,Captura manual,1
+Inventario,Autorización de traslados entre bodegas sin evidencia de forma manual,114,6,6,2,Control sin evidencia,0
+Cuentas por cobrar,Seguimiento de cheques devueltos de forma manual,58,41,6,1,Seguimiento manual,1
+Legal,Revisión de contratos sin firma completa de forma manual,65,22,4,3,Control sin evidencia,0
+Cuentas por cobrar,Seguimiento de cheques devueltos,48,61,2,4,Seguimiento manual,0
+Cuentas por cobrar,Control de límites de crédito sin evidencia con apoyo del correo,45,22,9,3,Control sin evidencia,0
+Legal,Preparación manual del resumen de cumplimiento legal en Excel,139,7,5,3,Reporte manual,1
+Administrativa,Digitación de facturas de proveedores,48,71,4,3,Captura manual,1
+Inventario,Seguimiento de diferencias de inventario por resolver en Excel,59,53,6,1,Seguimiento manual,0
+Cuentas por cobrar,Reporte de antigüedad de saldos,158,4,7,3,Reporte manual,1
+Cuentas por cobrar,Captura de notas de crédito en Excel de forma manual,85,37,5,2,Captura manual,0
+Legal,Control de cumplimiento normativo sin evidencia de forma manual,102,28,8,4,Control sin evidencia,0
+Administrativa,Preparación manual del presupuesto contra ejecutado,142,5,4,4,Reporte manual,1
+Prevencion de lavado de dinero y activos,Registro de transacciones sujetas a reporte en papel y luego digitado,62,37,3,1,Captura manual,1
+Inventario,Seguimiento de mercadería en tránsito de forma manual,38,36,6,3,Seguimiento manual,1
+Efectivo,Control de remesas por confirmar con el banco en Excel,44,55,2,3,Seguimiento manual,1
+Cuentas por cobrar,Autorización de notas de crédito sin firma,30,21,5,2,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Seguimiento de alertas por resolver,33,64,6,1,Seguimiento manual,1
+Inventario,Cotejo de existencias de bodega con el kárdex con apoyo del correo,300,5,7,3,Conciliacion manual,1
+Efectivo,Preparación manual del resumen de ingresos y egresos en el ERP y luego en Excel,210,4,4,2,Reporte manual,1
+Infraestructura,Cotejo de equipos instalados contra el registro con apoyo del correo,134,5,7,4,Conciliacion manual,0
+Efectivo,Armado del informe semanal de disponibilidad de forma manual,179,1,4,4,Reporte manual,1
+Flota vehicular,Conciliación de kilometraje contra consumo de combustible en papel y luego digitado,281,9,7,1,Conciliacion manual,0
+Prevencion de lavado de dinero y activos,Cotejo de transacciones contra el perfil del cliente en papel y luego digitado,179,9,6,4,Conciliacion manual,0
+Prevencion de lavado de dinero y activos,Seguimiento de requerimientos de información pendientes de forma manual,44,24,2,3,Seguimiento manual,1
+Legal,Comparación de contratos firmados contra el registro,109,7,10,4,Conciliacion manual,1
+Infraestructura,Revisión de mantenimientos sin acta de recepción en papel y luego digitado,113,17,4,3,Control sin evidencia,1
+Cuentas por cobrar,Autorización de notas de crédito sin firma de forma manual,66,14,6,2,Control sin evidencia,0
+Legal,Preparación manual del resumen de cumplimiento legal en el ERP y luego en Excel,229,6,8,1,Reporte manual,1
+Legal,Comparación de contratos firmados contra el registro con apoyo del correo,150,3,7,2,Conciliacion manual,1
+Infraestructura,Registro en bitácora de mantenimiento en papel y luego digitado,72,103,4,2,Captura manual,1
+Flota vehicular,Digitación de servicios y reparaciones de vehículos de forma manual,48,20,3,2,Captura manual,0
+Infraestructura,Registro en bitácora de mantenimiento en el ERP y luego en Excel,43,41,4,4,Captura manual,1
+Prevencion de lavado de dinero y activos,Seguimiento de alertas por resolver con apoyo del correo,44,30,4,2,Seguimiento manual,1
+Infraestructura,Captura de órdenes de trabajo en hoja de cálculo en papel y luego digitado,89,24,7,4,Captura manual,1
+Inventario,Preparación del resumen de inventario por bodega en el ERP y luego en Excel,173,7,8,3,Reporte manual,1
+Legal,Control de renovaciones por vencer con apoyo del correo,47,68,3,4,Seguimiento manual,0
+Administrativa,Armado del informe de pagos por proveedor en el ERP y luego en Excel,176,2,6,1,Reporte manual,1
+Administrativa,Aprobación de pagos sin respaldo documental en papel y luego digitado,39,25,5,4,Control sin evidencia,0
+Cuentas por cobrar,Seguimiento de cheques devueltos con apoyo del correo,55,52,4,1,Seguimiento manual,1
+Inventario,Conciliación de inventario por ubicación en papel y luego digitado,183,8,6,2,Conciliacion manual,0
+Cuentas por cobrar,Seguimiento de cobros vencidos en Excel,24,73,6,4,Seguimiento manual,1
+Administrativa,Cotejo de facturas contra órdenes de compra en Excel,154,9,6,1,Conciliacion manual,0
+Prevencion de lavado de dinero y activos,Seguimiento de requerimientos de información pendientes con apoyo del correo,40,31,4,3,Seguimiento manual,1
+Inventario,Preparación del resumen de inventario por bodega con apoyo del correo,129,6,6,2,Reporte manual,0
+Inventario,Seguimiento de mercadería en tránsito en papel y luego digitado,16,46,3,1,Seguimiento manual,0
+Cuentas por cobrar,Cotejo de facturas emitidas contra cobros aplicados en el ERP y luego en Excel,229,7,11,3,Conciliacion manual,0
+Flota vehicular,Control de siniestros sin acta en Excel,60,21,6,4,Control sin evidencia,0
+Efectivo,Arqueo de caja sin firma ni respaldo del conteo en papel y luego digitado,100,9,6,4,Control sin evidencia,0
+Administrativa,Seguimiento de pagos pendientes a proveedores de forma manual,35,75,5,1,Seguimiento manual,1
+Efectivo,Cotejo de arqueos de caja contra el sistema con apoyo del correo,125,10,9,2,Conciliacion manual,1
+Infraestructura,Preparación manual del resumen de costos de mantenimiento en el ERP y luego en Excel,175,4,8,1,Reporte manual,1
+Cuentas por cobrar,Digitación de recibos de pago de forma manual,56,88,3,4,Captura manual,1
+Legal,Seguimiento de trámites ante instituciones con apoyo del correo,27,62,6,4,Seguimiento manual,0
+Prevencion de lavado de dinero y activos,Reporte de operaciones inusuales en Excel,224,2,7,3,Reporte manual,1
+Infraestructura,Preparación manual del resumen de costos de mantenimiento con apoyo del correo,161,5,5,1,Reporte manual,0
+Efectivo,Registro de depósitos y remesas del día en papel y luego digitado,74,24,3,1,Captura manual,1
+Inventario,Seguimiento de diferencias de inventario por resolver,49,69,4,3,Seguimiento manual,1
+Flota vehicular,Seguimiento de mantenimientos programados,34,71,4,1,Seguimiento manual,0
+Flota vehicular,Seguimiento de mantenimientos programados en Excel,26,70,5,1,Seguimiento manual,1
+Legal,Armado del informe de litigios y trámites con apoyo del correo,228,3,6,3,Reporte manual,1
+Prevencion de lavado de dinero y activos,Control de operaciones inusuales sin bitácora con apoyo del correo,79,22,4,3,Control sin evidencia,0
+Infraestructura,Captura de órdenes de trabajo en hoja de cálculo en el ERP y luego en Excel,83,94,4,2,Captura manual,1
+Infraestructura,Preparación manual del resumen de costos de mantenimiento en el ERP y luego en Excel,177,1,4,3,Reporte manual,0
+Efectivo,Digitación de recibos de caja en el ERP y luego en Excel,44,110,3,3,Captura manual,1
+Administrativa,Captura de comprobantes de gasto en el sistema en papel y luego digitado,39,75,4,4,Captura manual,1
+Administrativa,Comparación de gastos registrados contra comprobantes en el ERP y luego en Excel,180,9,8,3,Conciliacion manual,1
+Cuentas por cobrar,Seguimiento de cheques devueltos en el ERP y luego en Excel,49,42,3,4,Seguimiento manual,1
+Cuentas por cobrar,Revisión de documentos de crédito sin respaldo en papel y luego digitado,36,7,7,2,Control sin evidencia,0
+Cuentas por cobrar,Seguimiento de cheques devueltos de forma manual,44,31,6,1,Seguimiento manual,1
+Flota vehicular,Seguimiento de multas y reparaciones pendientes de forma manual,39,32,2,3,Seguimiento manual,1
+Infraestructura,Conciliación del inventario de activos fijos de forma manual,117,5,9,4,Conciliacion manual,1
+Administrativa,Digitación de facturas de proveedores,77,51,6,3,Captura manual,1
+Legal,Conciliación de permisos vigentes contra la lista de operaciones en papel y luego digitado,225,10,7,1,Conciliacion manual,0
+Inventario,Registro de entradas y salidas de bodega en Excel,72,105,4,3,Captura manual,1
+Administrativa,Cotejo de facturas contra órdenes de compra de forma manual,237,12,11,1,Conciliacion manual,1
+Administrativa,Registro manual de órdenes de compra con apoyo del correo,90,87,5,4,Captura manual,1
+Cuentas por cobrar,Comparación del auxiliar de cuentas por cobrar contra el mayor en papel y luego digitado,246,9,7,3,Conciliacion manual,0
+Inventario,Reporte mensual de existencias y rotación en Excel,119,7,5,2,Reporte manual,1
+Efectivo,Control de remesas por confirmar con el banco con apoyo del correo,59,77,3,4,Seguimiento manual,1
+Flota vehicular,Conciliación de kilometraje contra consumo de combustible en el ERP y luego en Excel,196,10,10,4,Conciliacion manual,1
+Efectivo,Seguimiento de faltantes y sobrantes de caja en Excel,54,25,5,1,Seguimiento manual,0
+Prevencion de lavado de dinero y activos,Revisión de listas restrictivas sin registro de la consulta en Excel,34,8,4,4,Control sin evidencia,1
+Inventario,Conteo físico de inventario contra el sistema de forma manual,161,3,12,3,Conciliacion manual,1
+Infraestructura,Armado del informe mensual de mantenimientos de forma manual,185,8,4,1,Reporte manual,0
+Efectivo,Seguimiento de faltantes y sobrantes de caja en el ERP y luego en Excel,18,80,2,2,Seguimiento manual,0
+Prevencion de lavado de dinero y activos,Validación de clientes sin documentos de respaldo en papel y luego digitado,55,7,5,4,Control sin evidencia,0
+Infraestructura,Revisión de mantenimientos sin acta de recepción,108,11,9,3,Control sin evidencia,1
+Efectivo,Revisión de cierres de caja sin evidencia archivada de forma manual,99,28,9,2,Control sin evidencia,0
+Infraestructura,Comparación de facturas de mantenimiento contra órdenes de trabajo en papel y luego digitado,250,3,11,2,Conciliacion manual,0
+Legal,Seguimiento de trámites ante instituciones en papel y luego digitado,33,25,3,1,Seguimiento manual,1
+Legal,Comparación de contratos firmados contra el registro en papel y luego digitado,146,7,12,3,Conciliacion manual,1
+Prevencion de lavado de dinero y activos,Seguimiento de requerimientos de información pendientes en el ERP y luego en Excel,51,20,2,3,Seguimiento manual,1
+Cuentas por cobrar,Revisión de documentos de crédito sin respaldo en el ERP y luego en Excel,101,26,6,3,Control sin evidencia,1
+Prevencion de lavado de dinero y activos,Armado del informe periódico para el oficial de cumplimiento en Excel,152,4,4,2,Reporte manual,0
+Legal,Captura de expedientes legales en hoja de cálculo de forma manual,47,116,7,3,Captura manual,1
+Efectivo,Conciliación bancaria mensual contra estados de cuenta en Excel,187,6,11,4,Conciliacion manual,0
+Inventario,Autorización de traslados entre bodegas sin evidencia,83,24,8,4,Control sin evidencia,1
+Efectivo,Conciliación bancaria mensual contra estados de cuenta,250,4,12,2,Conciliacion manual,0
+Inventario,Reporte mensual de existencias y rotación en papel y luego digitado,175,5,5,4,Reporte manual,1
+Administrativa,Conciliación de cuentas por pagar contra estados de proveedores en el ERP y luego en Excel,268,4,11,3,Conciliacion manual,0
+Infraestructura,Verificación de extintores y salidas sin evidencia de forma manual,34,26,6,3,Control sin evidencia,1
+Prevencion de lavado de dinero y activos,Preparación manual del resumen de alertas con apoyo del correo,201,3,5,2,Reporte manual,1
+Administrativa,Comparación de gastos registrados contra comprobantes en Excel,145,9,8,2,Conciliacion manual,0
+Efectivo,Autorización verbal de salidas de efectivo con apoyo del correo,37,11,8,2,Control sin evidencia,0
+Administrativa,Aprobación de pagos sin respaldo documental en el ERP y luego en Excel,69,22,8,4,Control sin evidencia,1
+Flota vehicular,Digitación de servicios y reparaciones de vehículos de forma manual,50,46,3,1,Captura manual,1
+Prevencion de lavado de dinero y activos,Control de expedientes de clientes por actualizar de forma manual,46,17,2,3,Seguimiento manual,0
+Administrativa,Armado del informe de pagos por proveedor,149,7,6,4,Reporte manual,1
+Flota vehicular,Seguimiento de mantenimientos programados con apoyo del correo,39,34,5,2,Seguimiento manual,1
+Prevencion de lavado de dinero y activos,Comparación de operaciones contra listas internas en papel y luego digitado,188,7,7,4,Conciliacion manual,1
+Administrativa,Cotejo de facturas contra órdenes de compra,236,6,9,1,Conciliacion manual,1
+Inventario,Armado manual del informe de productos sin movimiento con apoyo del correo,167,4,7,4,Reporte manual,1
+Inventario,Verificación de documentos de ajuste sin respaldo en el ERP y luego en Excel,45,18,5,2,Control sin evidencia,0
+Inventario,Armado manual del informe de productos sin movimiento en Excel,160,1,4,1,Reporte manual,1
+Efectivo,Elaboración del reporte diario de flujo de efectivo de forma manual,131,8,5,2,Reporte manual,0
+Cuentas por cobrar,Seguimiento de cobros vencidos,51,34,3,2,Seguimiento manual,1
+Legal,Control de renovaciones por vencer en papel y luego digitado,43,51,5,2,Seguimiento manual,1
+Cuentas por cobrar,Digitación de recibos de pago en Excel,66,117,6,3,Captura manual,1
+Efectivo,Revisión de cierres de caja sin evidencia archivada de forma manual,61,11,4,1,Control sin evidencia,0
+Efectivo,Revisión de cierres de caja sin evidencia archivada en papel y luego digitado,94,28,5,3,Control sin evidencia,0
+Legal,Seguimiento de trámites ante instituciones de forma manual,40,79,4,1,Seguimiento manual,1
+Legal,Preparación manual del resumen de cumplimiento legal en papel y luego digitado,225,7,8,1,Reporte manual,1
+Legal,Conciliación de permisos vigentes contra la lista de operaciones en papel y luego digitado,108,8,12,3,Conciliacion manual,0
+Infraestructura,Captura de órdenes de trabajo en hoja de cálculo con apoyo del correo,30,62,7,4,Captura manual,1
+Inventario,Digitación de movimientos de mercadería,62,118,4,1,Captura manual,1
+Flota vehicular,Conciliación de kilometraje contra consumo de combustible con apoyo del correo,291,10,8,4,Conciliacion manual,0
+Efectivo,Conciliación bancaria mensual contra estados de cuenta en papel y luego digitado,286,2,7,3,Conciliacion manual,0
+Infraestructura,Inspección de instalaciones sin registro fotográfico de forma manual,77,25,9,4,Control sin evidencia,0
+Inventario,Autorización de traslados entre bodegas sin evidencia de forma manual,81,11,5,4,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Registro de transacciones sujetas a reporte en el ERP y luego en Excel,69,80,3,1,Captura manual,1
+Legal,Reporte de vencimientos de contratos y permisos en Excel,135,2,8,1,Reporte manual,0
+Legal,Captura de expedientes legales en hoja de cálculo en el ERP y luego en Excel,34,117,5,3,Captura manual,1
+Infraestructura,Seguimiento de reparaciones pendientes con proveedores en el ERP y luego en Excel,39,52,5,3,Seguimiento manual,1
+Legal,Revisión de contratos sin firma completa en papel y luego digitado,94,24,5,1,Control sin evidencia,1
+Prevencion de lavado de dinero y activos,Revisión de listas restrictivas sin registro de la consulta en papel y luego digitado,76,20,9,4,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Comparación de operaciones contra listas internas con apoyo del correo,295,3,11,3,Conciliacion manual,1
+Prevencion de lavado de dinero y activos,Cotejo de transacciones contra el perfil del cliente,169,10,9,3,Conciliacion manual,0
+Administrativa,Comparación de gastos registrados contra comprobantes en el ERP y luego en Excel,115,5,8,3,Conciliacion manual,1
+Administrativa,Reporte mensual de gastos administrativos de forma manual,131,3,8,4,Reporte manual,1
+Inventario,Captura de ajustes de inventario en Excel,53,34,3,2,Captura manual,1
+Efectivo,Captura de ingresos de caja en hoja de cálculo,64,97,5,3,Captura manual,1
+Flota vehicular,Autorización de rutas sin registro con apoyo del correo,112,27,7,4,Control sin evidencia,0
+Cuentas por cobrar,Reporte de antigüedad de saldos de forma manual,100,7,8,3,Reporte manual,0
+Infraestructura,Cotejo de equipos instalados contra el registro en papel y luego digitado,295,3,9,3,Conciliacion manual,0
+Legal,Captura de expedientes legales en hoja de cálculo de forma manual,40,67,5,3,Captura manual,1
+Efectivo,Arqueo de caja sin firma ni respaldo del conteo en papel y luego digitado,111,20,8,3,Control sin evidencia,1
+Flota vehicular,Cotejo de facturas de combustible contra las bitácoras,103,6,9,2,Conciliacion manual,0
+Flota vehicular,Seguimiento de multas y reparaciones pendientes en el ERP y luego en Excel,35,18,4,4,Seguimiento manual,0
+Administrativa,Revisión de autorizaciones de gasto sin firma con apoyo del correo,39,5,5,2,Control sin evidencia,0
+Inventario,Registro de entradas y salidas de bodega,89,24,5,2,Captura manual,1
+Flota vehicular,Reporte de rendimiento de unidades en el ERP y luego en Excel,105,2,4,4,Reporte manual,1
+Prevencion de lavado de dinero y activos,Control de operaciones inusuales sin bitácora con apoyo del correo,70,24,6,4,Control sin evidencia,1
+Flota vehicular,Digitación de servicios y reparaciones de vehículos en el ERP y luego en Excel,72,58,5,2,Captura manual,1
+Efectivo,Comparación de depósitos contra el extracto del banco,187,11,9,4,Conciliacion manual,1
+Prevencion de lavado de dinero y activos,Validación de clientes sin documentos de respaldo en Excel,41,29,9,4,Control sin evidencia,0
+Legal,Comparación de contratos firmados contra el registro en papel y luego digitado,164,3,9,4,Conciliacion manual,1
+Prevencion de lavado de dinero y activos,Digitación de formularios de conocimiento del cliente en papel y luego digitado,79,109,6,2,Captura manual,1
+Prevencion de lavado de dinero y activos,Control de operaciones inusuales sin bitácora de forma manual,77,18,4,3,Control sin evidencia,0
+Legal,Digitación de poderes y escrituras en el ERP y luego en Excel,26,39,4,1,Captura manual,1
+Cuentas por cobrar,Reporte de antigüedad de saldos,186,3,6,4,Reporte manual,1
+Legal,Control de cumplimiento normativo sin evidencia de forma manual,97,20,8,4,Control sin evidencia,1
+Efectivo,Elaboración del reporte diario de flujo de efectivo de forma manual,72,1,4,1,Reporte manual,0
+Infraestructura,Seguimiento de órdenes de trabajo abiertas de forma manual,44,66,5,3,Seguimiento manual,1
+Legal,Cotejo de documentos legales contra el expediente en Excel,240,8,10,4,Conciliacion manual,1
+Inventario,Verificación de documentos de ajuste sin respaldo,58,9,9,4,Control sin evidencia,0
+Administrativa,Control de viáticos sin comprobantes completos de forma manual,94,21,7,3,Control sin evidencia,0
+Administrativa,Revisión de autorizaciones de gasto sin firma en Excel,100,6,5,2,Control sin evidencia,1
+Cuentas por cobrar,Seguimiento de cobros vencidos en papel y luego digitado,52,24,2,2,Seguimiento manual,1
+Flota vehicular,Autorización de rutas sin registro con apoyo del correo,35,22,5,4,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Registro de transacciones sujetas a reporte en papel y luego digitado,87,66,3,1,Captura manual,0
+Legal,Captura de expedientes legales en hoja de cálculo en el ERP y luego en Excel,20,46,5,1,Captura manual,0
+Efectivo,Preparación manual del resumen de ingresos y egresos con apoyo del correo,123,4,5,1,Reporte manual,1
+Cuentas por cobrar,Control de límites de crédito sin evidencia en papel y luego digitado,61,5,9,2,Control sin evidencia,0
+Legal,Verificación de vigencia de permisos sin copia archivada con apoyo del correo,87,5,4,4,Control sin evidencia,0
+Administrativa,Captura de comprobantes de gasto en el sistema de forma manual,80,102,6,2,Captura manual,1
+Legal,Armado del informe de litigios y trámites con apoyo del correo,114,6,7,2,Reporte manual,1
+Flota vehicular,Seguimiento de multas y reparaciones pendientes en papel y luego digitado,20,52,3,4,Seguimiento manual,1
+Prevencion de lavado de dinero y activos,Reporte de operaciones inusuales en Excel,66,6,8,4,Reporte manual,1
+Inventario,Seguimiento de mercadería en tránsito de forma manual,49,21,4,1,Seguimiento manual,1
+Prevencion de lavado de dinero y activos,Validación de clientes sin documentos de respaldo en papel y luego digitado,120,6,8,3,Control sin evidencia,0
+Cuentas por cobrar,Digitación de recibos de pago,66,90,5,2,Captura manual,1
+Cuentas por cobrar,Reporte de antigüedad de saldos con apoyo del correo,145,5,7,1,Reporte manual,0
+Prevencion de lavado de dinero y activos,Preparación manual del resumen de alertas en el ERP y luego en Excel,92,5,8,3,Reporte manual,1
+Inventario,Captura de ajustes de inventario en Excel de forma manual,50,40,4,2,Captura manual,0
+Infraestructura,Preparación manual del resumen de costos de mantenimiento de forma manual,76,8,7,1,Reporte manual,0
+Legal,Captura de expedientes legales en hoja de cálculo en el ERP y luego en Excel,54,23,4,1,Captura manual,1
+Administrativa,Seguimiento de solicitudes de compra en trámite en el ERP y luego en Excel,19,50,5,2,Seguimiento manual,1
+Infraestructura,Control de mantenimientos preventivos programados,56,42,5,1,Seguimiento manual,1
+Flota vehicular,Reporte de rendimiento de unidades en Excel,129,1,4,4,Reporte manual,1
+Flota vehicular,Preparación manual del resumen de kilometraje en Excel,115,8,6,1,Reporte manual,1
+Prevencion de lavado de dinero y activos,Control de expedientes de clientes por actualizar de forma manual,28,58,6,4,Seguimiento manual,1
+Prevencion de lavado de dinero y activos,Registro de transacciones sujetas a reporte en el ERP y luego en Excel,34,119,5,4,Captura manual,1
+Cuentas por cobrar,Revisión de documentos de crédito sin respaldo con apoyo del correo,113,12,9,4,Control sin evidencia,0
+Flota vehicular,Reporte de rendimiento de unidades en papel y luego digitado,83,7,7,1,Reporte manual,1
+Infraestructura,Comparación de facturas de mantenimiento contra órdenes de trabajo en papel y luego digitado,245,9,12,1,Conciliacion manual,0
+Legal,Captura de expedientes legales en hoja de cálculo,23,31,7,2,Captura manual,1
+Inventario,Seguimiento de mercadería en tránsito de forma manual,18,48,5,2,Seguimiento manual,1
+Infraestructura,Cotejo de equipos instalados contra el registro en papel y luego digitado,266,6,9,4,Conciliacion manual,0
+Legal,Seguimiento de requerimientos legales pendientes en Excel,20,43,5,4,Seguimiento manual,0
+Administrativa,Registro manual de órdenes de compra con apoyo del correo,79,75,7,4,Captura manual,1
+Cuentas por cobrar,Digitación de recibos de pago en Excel,58,95,5,4,Captura manual,1
+Infraestructura,Cotejo de equipos instalados contra el registro en Excel,146,12,7,3,Conciliacion manual,1
+Flota vehicular,Cotejo de facturas de combustible contra las bitácoras en Excel,186,4,12,3,Conciliacion manual,1
+Cuentas por cobrar,Seguimiento de cheques devueltos,19,75,2,1,Seguimiento manual,1
+Flota vehicular,Captura de bitácoras de viaje en Excel,44,112,3,3,Captura manual,1
+Cuentas por cobrar,Preparación manual del resumen de cobros por cliente en el ERP y luego en Excel,94,8,6,4,Reporte manual,1
+Legal,Verificación de vigencia de permisos sin copia archivada en el ERP y luego en Excel,113,6,5,2,Control sin evidencia,0
+Infraestructura,Inspección de instalaciones sin registro fotográfico con apoyo del correo,88,15,9,1,Control sin evidencia,0
+Legal,Revisión de contratos sin firma completa,108,23,8,1,Control sin evidencia,0
+Infraestructura,Cotejo de equipos instalados contra el registro en el ERP y luego en Excel,132,6,12,3,Conciliacion manual,0
+Flota vehicular,Autorización de rutas sin registro en el ERP y luego en Excel,93,21,9,2,Control sin evidencia,0
+Cuentas por cobrar,Cotejo de facturas emitidas contra cobros aplicados en papel y luego digitado,224,8,8,4,Conciliacion manual,0
+Infraestructura,Inspección de instalaciones sin registro fotográfico en Excel,101,15,4,4,Control sin evidencia,0
+Legal,Captura de expedientes legales en hoja de cálculo con apoyo del correo,20,43,4,3,Captura manual,1
+Efectivo,Captura de ingresos de caja en hoja de cálculo en el ERP y luego en Excel,20,117,4,3,Captura manual,1
+Infraestructura,Registro en bitácora de mantenimiento con apoyo del correo,57,65,5,1,Captura manual,1
+Inventario,Conciliación de inventario por ubicación con apoyo del correo,173,8,11,4,Conciliacion manual,1
+Inventario,Digitación de movimientos de mercadería en Excel,90,110,6,4,Captura manual,1
+Legal,Reporte de vencimientos de contratos y permisos con apoyo del correo,224,6,5,4,Reporte manual,1
+Administrativa,Registro manual de órdenes de compra con apoyo del correo,73,82,3,1,Captura manual,1
+Cuentas por cobrar,Cotejo de facturas emitidas contra cobros aplicados en papel y luego digitado,195,10,12,2,Conciliacion manual,0
+Cuentas por cobrar,Captura de notas de crédito en Excel de forma manual,35,36,3,3,Captura manual,1
+Prevencion de lavado de dinero y activos,Captura de datos de clientes para el expediente de forma manual,85,93,4,1,Captura manual,1
+Cuentas por cobrar,Autorización de notas de crédito sin firma en el ERP y luego en Excel,58,13,6,3,Control sin evidencia,0
+Administrativa,Control de viáticos sin comprobantes completos en el ERP y luego en Excel,84,7,8,2,Control sin evidencia,0
+Administrativa,Control de viáticos sin comprobantes completos en papel y luego digitado,86,7,7,3,Control sin evidencia,0
+Infraestructura,Reporte de estado de equipos e instalaciones en Excel,104,2,4,3,Reporte manual,1
+Efectivo,Elaboración del reporte diario de flujo de efectivo en Excel,60,7,6,4,Reporte manual,0
+Legal,Seguimiento de trámites ante instituciones con apoyo del correo,16,55,2,2,Seguimiento manual,0
+Infraestructura,Digitación de reportes de fallas de instalaciones en papel y luego digitado,49,115,3,3,Captura manual,1
+Legal,Comparación de contratos firmados contra el registro en Excel,266,7,6,4,Conciliacion manual,1
+Administrativa,Seguimiento de pagos pendientes a proveedores de forma manual,47,49,5,3,Seguimiento manual,0
+Legal,Control de cumplimiento normativo sin evidencia en papel y luego digitado,110,14,5,3,Control sin evidencia,0
+Inventario,Reporte mensual de existencias y rotación de forma manual,144,8,7,4,Reporte manual,1
+Efectivo,Elaboración del reporte diario de flujo de efectivo con apoyo del correo,114,3,8,4,Reporte manual,1
+Inventario,Autorización de traslados entre bodegas sin evidencia en el ERP y luego en Excel,41,30,5,3,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Captura de datos de clientes para el expediente,73,101,7,2,Captura manual,1
+Flota vehicular,Autorización de rutas sin registro de forma manual,90,28,6,1,Control sin evidencia,0
+Infraestructura,Registro en bitácora de mantenimiento en papel y luego digitado,76,41,5,1,Captura manual,0
+Administrativa,Preparación manual del presupuesto contra ejecutado con apoyo del correo,220,8,4,4,Reporte manual,1
+Inventario,Verificación de documentos de ajuste sin respaldo en el ERP y luego en Excel,81,21,4,3,Control sin evidencia,0
+Flota vehicular,Control de siniestros sin acta con apoyo del correo,47,27,8,2,Control sin evidencia,0
+Infraestructura,Control de mantenimientos preventivos programados de forma manual,57,47,4,3,Seguimiento manual,0
+Flota vehicular,Registro de combustible por unidad en Excel,67,68,6,4,Captura manual,1
+Inventario,Armado manual del informe de productos sin movimiento de forma manual,207,7,7,1,Reporte manual,1
+Prevencion de lavado de dinero y activos,Comparación de operaciones contra listas internas en el ERP y luego en Excel,229,6,8,2,Conciliacion manual,1
+Prevencion de lavado de dinero y activos,Seguimiento de requerimientos de información pendientes,55,52,4,4,Seguimiento manual,1
+Administrativa,Aprobación de pagos sin respaldo documental en papel y luego digitado,67,5,5,4,Control sin evidencia,0
+Prevencion de lavado de dinero y activos,Reporte de operaciones inusuales,137,3,5,2,Reporte manual,1
+Flota vehicular,Autorización de rutas sin registro de forma manual,69,12,6,3,Control sin evidencia,0
+Efectivo,Seguimiento de cheques pendientes de cobro en el ERP y luego en Excel,58,45,5,1,Seguimiento manual,1
+Infraestructura,Seguimiento de reparaciones pendientes con proveedores,53,54,4,3,Seguimiento manual,1
+Legal,Comparación de contratos firmados contra el registro en Excel,187,10,11,2,Conciliacion manual,1
+Administrativa,Seguimiento de solicitudes de compra en trámite con apoyo del correo,43,27,6,1,Seguimiento manual,0
+Efectivo,Digitación de recibos de caja de forma manual,68,30,7,1,Captura manual,1
+Infraestructura,Seguimiento de reparaciones pendientes con proveedores con apoyo del correo,41,60,5,1,Seguimiento manual,0
+Infraestructura,Cotejo de equipos instalados contra el registro de forma manual,238,7,11,1,Conciliacion manual,1
+Cuentas por cobrar,Captura de notas de crédito en Excel,24,37,5,1,Captura manual,1
+Cuentas por cobrar,Digitación de recibos de pago en el ERP y luego en Excel,38,45,7,3,Captura manual,1
+Efectivo,Seguimiento de faltantes y sobrantes de caja en el ERP y luego en Excel,19,42,6,1,Seguimiento manual,1
+Prevencion de lavado de dinero y activos,Preparación manual del resumen de alertas en papel y luego digitado,194,7,7,4,Reporte manual,1
+Infraestructura,Armado del informe mensual de mantenimientos,224,1,4,2,Reporte manual,0
+Efectivo,Seguimiento de faltantes y sobrantes de caja en el ERP y luego en Excel,31,41,4,3,Seguimiento manual,1
+Efectivo,Cotejo de arqueos de caja contra el sistema de forma manual,106,5,10,3,Conciliacion manual,0
+Inventario,Captura de ajustes de inventario en Excel con apoyo del correo,52,26,3,4,Captura manual,1
+Legal,Captura de expedientes legales en hoja de cálculo,82,87,5,3,Captura manual,1
+Prevencion de lavado de dinero y activos,Conciliación de reportes enviados contra transacciones registradas de forma manual,99,12,7,3,Conciliacion manual,1

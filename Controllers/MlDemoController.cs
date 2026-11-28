@@ -30,13 +30,17 @@ public class MlDemoController : Controller
 
         var prediccion = _ml.PredecirAutomatizable(tarea);
         var atipicas = _ml.DetectarTiemposAtipicos(new List<Tarea> { tarea });
+        var tipo = _ml.PredecirTipoProblema(tarea);
 
         return Json(new
         {
             entrenamiento = _ml.ResumenEntrenamiento,
             esAutomatizable = prediccion.EsAutomatizable,
             probabilidad = prediccion.Probabilidad,
-            esTiempoAtipico = atipicas[0].EsAtipica
+            esTiempoAtipico = atipicas[0].EsAtipica,
+            entrenamientoTipo = _ml.ResumenTipoProblema,
+            tipoProblema = tipo.Tipo,
+            confianzaTipo = tipo.Confianza
         });
     }
 }
